@@ -4,9 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 require('dotenv').config()
 
 const config: Config = {
-  title: 'BMD Docs Test',
-  tagline: 'document are not cool',
-  favicon: 'img/favicon.ico',
+  title: 'BMD Docs',
+  tagline: 'Document for davinci reoslve (python/lua)',
+  favicon: 'img/DaVinci-Resolve-Logo.ico',
 
   // Set the production url of your site here
   url: 'https://www.github.com',
@@ -69,7 +69,7 @@ const config: Config = {
       title: 'BMD',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/DaVinci-Resolve-Logo.png',
       },
       items: [
         {
@@ -84,8 +84,8 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://www.blackmagicdesign.com/products/davinciresolve',
+          label: 'Davinci Resolve',
           position: 'right',
         },
 
@@ -98,43 +98,43 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'API',
               to: '/docs/intro',
             },
           ],
         },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //     {
+        //       label: 'Twitter',
+        //       href: 'https://twitter.com/docusaurus',
+        //     },
+        //   ],
+        // },
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
+            // {
+            //   label: 'Blog',
+            //   to: '/blog',
+            // },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/WheheoHu/bmd_doc',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} bmd_doc, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
