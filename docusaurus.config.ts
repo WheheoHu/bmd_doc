@@ -9,7 +9,7 @@ const config: Config = {
   favicon: 'img/DaVinci-Resolve-Logo.ico',
 
   // Set the production url of your site here
-  url: 'https://www.github.com',
+  url: 'https://wheheohu.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/bmd_doc/',
@@ -19,7 +19,7 @@ const config: Config = {
   organizationName: 'wheheohu', // Usually your GitHub org/user name.
   projectName: 'bmd_doc', // Usually your repo name.
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
