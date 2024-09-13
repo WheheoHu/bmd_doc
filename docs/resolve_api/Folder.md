@@ -11,7 +11,7 @@ Returns true if export of DRB folder to filePath is successful, false otherwise
 ### GetClipList()            
 Return Type:`[clips...]`
 
-Returns a list of DaVinci%20Resolve%20Python%20API%207c4f1038a36f44818b631ec7e4a537fa/MediaPoolItem%20c4d05d0255524396afb988369e4b2586.md (items) within the folder.
+Returns a list of [MediaPoolItem](./MediaPoolItem.md) (items) within the folder.
 
 ### GetIsFolderStale()
 Return Type:`Bool`
@@ -26,7 +26,7 @@ Returns the media folder name.
 ### GetSubFolderList()       
 Return Type:`[folders...]`
 
-Returns a list of DaVinci%20Resolve%20Python%20API%207c4f1038a36f44818b631ec7e4a537fa/Folder%20aeb1cfac910048dc87fc8b9d992992f7.md in the folder.
+Returns a list of [Folder](./Folder.md) in the folder.
 
 ### GetUniqueId()
 Return Type:`string`

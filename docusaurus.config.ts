@@ -66,7 +66,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'BMD',
+      title: 'BMD Docs',
       logo: {
         alt: 'My Site Logo',
         src: 'img/DaVinci-Resolve-Logo.png',
@@ -137,7 +137,7 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} bmd_doc, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.dracula,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
