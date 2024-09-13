@@ -78,6 +78,12 @@ const config: Config = {
           position: 'left',
           label: 'API',
         },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          dropdownActiveClassDisabled: true,
+        },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: 'search',
