@@ -7,7 +7,7 @@ Adds new subfolder under specified [Folder](./Folder.md)  object with the given 
 Return Type:`[TimelineItem]`
 
 Appends list of clipInfos specified as dict of mediaPoolItem, startFrame (int), endFrame(int), (optional) mediaType(int; 1 - Video only, 2 - Audio only), trackIndex(int) and recordFrame(int). 
-Returns the list of appended [TimelineItem](./time) .
+Returns the list of appended [TimelineItem](./TimelineItem.md) .
 
 ### AppendToTimeline([clips])                       
 Return Type:`[TimelineItem]`
