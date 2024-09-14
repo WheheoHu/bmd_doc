@@ -4,7 +4,6 @@ sidebar_label: Introduction
 ---
 # 
 
-Created: January 11, 2022 9:29 PM
 
 <aside>
 💡 Updated as of 7 November 2023
