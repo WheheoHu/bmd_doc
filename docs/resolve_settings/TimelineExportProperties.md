@@ -24,6 +24,12 @@ resolve.EXPORT_DOLBY_VISION_VER_4_0
 resolve.EXPORT_DOLBY_VISION_VER_5_1
 resolve.EXPORT_OTIO
 ```
+> New in 19.0.0
+
+```jsx
+resolve.EXPORT_ALE
+resolve.EXPORT_ALE_CDL
+```
 
 exportSubtype can be one of the following enums:
 

@@ -33,6 +33,12 @@ TimelineItem
 GetFusionCompNames()                            --> {names...}         # Returns a dict of Fusion composition names associated with the timeline item.
 GetFlags()                                      --> {colors...}        # Returns a dict of flag colors assigned to the item.
 GetVersionNames(versionType)                    --> {names...}         # Returns a dict of version names by provided versionType: 0 - local, 1 - remote.
+GetNumNodes()                                   --> int                # Returns the number of nodes in the current graph for the timeline item
+SetLUT(nodeIndex, lutPath)                      --> Bool               # Sets LUT on the node mapping the node index provided, 1 <= nodeIndex <= total number of nodes.
+                                                                         # The lutPath can be an absolute path, or a relative path (based off custom LUT paths or the master LUT path).
+                                                                         # The operation is successful for valid lut paths that Resolve has already discovered (see Project.RefreshLUTList).
+GetLUT(nodeIndex)                               --> String             # Gets relative LUT path based on the node index provided, 1 <= nodeIndex <= total number of nodes.
+GetNodeLabel(nodeIndex)                         --> string             # Returns the label of the node at nodeIndex.
 ```
 ## Unsupported Resolve API Functions
 ```

@@ -5,10 +5,10 @@ sidebar_label: Introduction
 # 
 
 
-<aside>
-💡 Updated as of 7 November 2023
 
-</aside>
+💡 Last Updated: 16 July 2024
+
+
 
 ---
 
@@ -18,7 +18,7 @@ In this package, you will find a brief introduction to the Scripting API for DaV
 
 From v16.2.0 onwards, the `nodeIndex` parameters accepted by `SetLUT()` and `SetCDL()` are 1-based instead of 0-based, i.e. `1 <= nodeIndex <= total number of nodes`.
 
-As with Blackmagic Design Fusion scripts, user scripts written in Lua and Python programming languages are supported. By default, scripts can be invoked from the Console window in the Fusion page, or via command line. This permission can be changed in Resolve Preferences, to be only from Console, or to be invoked from the local network. Please be aware of the security implications when allowing scripting access from outside of the Resolve application.
+As with Blackmagic Fusion scripts, user scripts written in Lua and Python programming languages are supported. By default, scripts can be invoked from the Console window in the Fusion page, or via command line. This permission can be changed in Resolve Preferences, to be only from Console, or to be invoked from the local network. Please be aware of the security implications when allowing scripting access from outside of the Resolve application.
 
 ## Prerequisites
 
@@ -27,8 +27,7 @@ DaVinci Resolve scripting requires one of the following to be installed (for all
 ```
 Lua 5.1
 Python 2.7 64-bit
-Python 3.6 64-bit
-Python >3.6 64-bit (Need Davinci Resolve above ver 18)
+Python >=3.6 64-bit 
 ```
 
 ## Using a script
