@@ -24,7 +24,7 @@ As with Blackmagic Design Fusion scripts, user scripts written in Lua and Python
 DaVinci Resolve scripting requires one of the following to be installed (for all users):
 
 ```
-Lua 5.1
+Lua 5.1 # Not required manually install,Resolve using build-in version of LuaJIT,Thanks to @AndrewHazelden at We Suck Less
 Python 2.7 64-bit
 Python 3.6 64-bit
 Python >3.6 64-bit (Need Davinci Resolve above ver 18)
