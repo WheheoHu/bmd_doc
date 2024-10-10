@@ -28,11 +28,11 @@ The parameter setting is a dictionary containing the following keys:
 
 "`VideoQuality`" possible values for current codec (if applicable):
     
-     `0`(int) - will set quality to automatic
+- `0`(int) - will set quality to automatic
     
-    `[1 -> MAX]` (int) - will set input bit rate
+- `[1 -> MAX]` (int) - will set input bit rate
     
-    `["Least", "Low", "Medium", "High", "Best"]` (String) - will set input quality level
+- `["Least", "Low", "Medium", "High", "Best"]` (String) - will set input quality level
     
 
 "`AudioCodec`": string (example: "aac")
