@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 require('dotenv').config()
 
@@ -29,6 +29,9 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  plugins: [[require.resolve("@cmfcmf/docusaurus-search-local"), {
+    indexBlog: false,
+  },]],
   presets: [
     [
       'classic',
@@ -77,12 +80,22 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
+          label: 'Intro',
+        },
+        {
+          to: 'docs/category/apis',
+          position: 'left',
           label: 'API',
+        },
+        {
+          to: 'docs/category/settings-and-properties',
+          position: 'left',
+          label: 'Settings',
         },
         {
           type: 'docsVersionDropdown',
           position: 'right',
-          dropdownItemsAfter: [{to: '/versions', label: 'Update Info'}],
+          dropdownItemsAfter: [{ to: '/versions', label: 'Update Info' }],
           dropdownActiveClassDisabled: true,
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
