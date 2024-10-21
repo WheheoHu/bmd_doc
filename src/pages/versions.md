@@ -4,6 +4,10 @@ title: Version Update Info
 
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
+# Resolve 19.0.3 update
+## MediaPool
+### Changes
+- `AppendToTimeline` and `CreateTimelineFromClips` allow sub-frame precision data for `clipInfo`
 
 # Resolve 19.0.2 update
 ## MediaPool
