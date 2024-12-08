@@ -1,43 +1,62 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-require('dotenv').config()
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+require("dotenv").config();
+
 
 const config: Config = {
-  title: 'BMD Docs',
-  tagline: 'Make BMD\'s README.txt document readable again',
-  favicon: 'img/DaVinci-Resolve-Logo.ico',
+  title: "BMD Docs",
+  tagline: "Make BMD's README.txt document readable again",
+  favicon: "img/DaVinci-Resolve-Logo.ico",
 
   // Set the production url of your site here
-  url: 'https://wheheohu.github.io',
+  url: "https://wheheohu.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/bmd_doc/',
+  baseUrl: "/bmd_doc/",
   trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'wheheohu', // Usually your GitHub org/user name.
-  projectName: 'bmd_doc', // Usually your repo name.
+  organizationName: "wheheohu", // Usually your GitHub org/user name.
+  projectName: "bmd_doc", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
-  plugins: [[require.resolve("@cmfcmf/docusaurus-search-local"), {
-    indexBlog: false,
-  },]],
+  plugins: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        indexBlog: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'workflow',
+        path: 'docs/workflow',
+        routeBasePath: 'workflow',
+        sidebarPath: './sidebarsWorkflow.ts',
+        // ... other options
+      },
+    ],
+  ],
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          id: "ResolveAPI",
+          path: "docs/ResolveAPI",
+          routeBasePath: "ResolveAPI",
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -60,7 +79,7 @@ const config: Config = {
         //   onUntruncatedBlogPosts: 'warn',
         // },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -68,59 +87,100 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: 'BMD Docs',
+      title: "BMD Docs",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/DaVinci-Resolve-Logo.png',
+        alt: "My Site Logo",
+        src: "img/DaVinci-Resolve-Logo.png",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Intro',
+          type: "dropdown",
+          label: "Resolve API",
+          position: "left",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "apiSidebar",
+              label: "Intro",
+              docsPluginId: "ResolveAPI",
+            },
+            {
+              to: "ResolveAPI/category/apis",
+
+              label: "API",
+            },
+            {
+              to: "ResolveAPI/category/settings-and-properties",
+
+              label: "Settings",
+            },
+            // ... more items
+          ],
         },
         {
-          to: 'docs/category/apis',
-          position: 'left',
-          label: 'API',
+          type: "dropdown",
+          label: "Workflow & UI",
+          position: "left",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "workflowSidebar",
+              label: "Intro",
+              docsPluginId: "workflow",
+            },
+            {
+              to: "workflow/WorkflowIntegration",
+
+              label: "Workflow",}
+          ],
         },
+        
         {
-          to: 'docs/category/settings-and-properties',
-          position: 'left',
-          label: 'Settings',
-        },
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          dropdownItemsAfter: [{ to: '/versions', label: 'Update Info' }],
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownItemsAfter: [{ to: "/versions", label: "Update Info" }],
           dropdownActiveClassDisabled: true,
+          docsPluginId: "ResolveAPI",
+        },
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownItemsAfter: [{ to: "/versions", label: "Update Info" }],
+          dropdownActiveClassDisabled: true,
+          docsPluginId: "workflow",
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
-          type: 'search',
-          position: 'right',
+          type: "search",
+          position: "right",
         },
         {
-          href: 'https://www.blackmagicdesign.com/products/davinciresolve',
-          label: 'Davinci Resolve',
-          position: 'right',
+          href: "https://www.blackmagicdesign.com/products/davinciresolve",
+          label: "Davinci Resolve",
+          position: "right",
         },
-
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'API',
-              to: '/docs/intro',
+              label: "Resolve API",
+              to: "ResolveAPI/category/apis",
             },
+            {
+              label: "Workflow Intergration",
+              to: "workflow/WorkflowIntegration",
+            },
+            {
+              label: "UI",
+              to: "workflow/UIManager",
+            }
           ],
         },
         // {
@@ -141,15 +201,15 @@ const config: Config = {
         //   ],
         // },
         {
-          title: 'More',
+          title: "More",
           items: [
             // {
             //   label: 'Blog',
             //   to: '/blog',
             // },
             {
-              label: 'GitHub',
-              href: 'https://github.com/WheheoHu/bmd_doc',
+              label: "GitHub",
+              href: "https://github.com/WheheoHu/bmd_doc",
             },
           ],
         },
@@ -163,6 +223,4 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 };
 
-
 export default config;
-
