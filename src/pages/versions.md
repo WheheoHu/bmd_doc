@@ -4,6 +4,16 @@ title: Version Update Info
 
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
+# Resolve 20.0.0 update
+
+## MediaPoolItem
+
+### New
+
+- LinkFullResolutionMedia(fullResMediaPath)
+- ReplaceClipPreserveSubClip(filePath)
+- MonitorGrowingFile()
+
 # Resolve 19.1.0 update
 
 ## ProjectManager
