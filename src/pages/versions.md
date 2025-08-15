@@ -4,6 +4,23 @@ title: Version Update Info
 
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
+
+# Resolve 20.1.0 update
+
+## Timeline
+
+### New
+
+- GetVoiceIsolationState(trackIndex)
+- SetVoiceIsolationState(trackIndex, \{VoiceIsolationState\})
+
+## TimelineItem
+
+### New
+
+- GetVoiceIsolationState()
+- SetVoiceIsolationState(\{VoiceIsolationState\})
+
 # Resolve 20.0.0 update
 
 ## MediaPoolItem
