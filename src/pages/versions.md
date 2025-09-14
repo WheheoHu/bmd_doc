@@ -5,6 +5,28 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 20.2.0 update
+
+## MediaPoolItem
+
+### New
+
+- SetName(name)
+
+## TimelineItem
+
+### New
+
+- SetName(name)
+- ResetAllNodeColors()
+
+## Render Settings
+
+### New Export Subtitle Options
+
+- "ExportSubtitle": Bool
+- "SubtitleFormat": string (options: "BurnIn", "EmbeddedCaptions", "SeparateFile")
+
 # Resolve 20.1.0 update
 
 ## Timeline
