@@ -18,7 +18,7 @@ For more information on the latest version of the Update, see the [release notes
 ### New
 
 - SetName(name)
-- ResetAllNodeColors()
+- ResetAllNodeColors() [NOT WORKING]
 
 ## Render Settings
 
