@@ -1,4 +1,5 @@
 import { stripFrontmatter } from './frontmatter.mjs';
+import { unescapeBraces } from './transform.mjs';
 
 export function scanMoves(raw, objectName) {
   const moves = [];
@@ -24,10 +25,11 @@ export function buildDeprecated(miscRaw, moves) {
     const key = `${m.object}.${m.method}.${m.since}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    const target = m.target
+    const target = unescapeBraces(m.target)
       .replaceAll('](./', '](./api/')
-      .replaceAll('resolve_settings/', 'settings/');
-    rows.push(`- \`${m.object}.${m.method}\` → moved to ${target} since ${m.since}`);
+      .replaceAll('](../resolve_api/', '](./api/')
+      .replaceAll('](../resolve_settings/', '](./settings/');
+    rows.push(`- \`${m.object}.${unescapeBraces(m.method)}\` → moved to ${target} since ${m.since}`);
   }
   if (rows.length) out += `\n\n## Moved methods\n\n${rows.join('\n')}`;
   return `${out.replace(/\s+$/, '')}\n`;

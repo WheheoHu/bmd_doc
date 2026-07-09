@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { buildSkill } from '../build-skill.mjs';
 
+// NOTE: buildSkill() writes into the committed skill/ tree in place; run from repo root.
+
 test('buildSkill produces a clean skill tree from the real docs', () => {
   const res = buildSkill();
   assert.ok(res.apiCount >= 13, 'has api files');
