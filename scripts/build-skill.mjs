@@ -6,6 +6,7 @@ import { stripFrontmatter } from './lib/frontmatter.mjs';
 import { scanMoves, buildDeprecated } from './lib/deprecated.mjs';
 import { injectVars, readVersion, readLastUpdated } from './lib/templates.mjs';
 import { buildIndex } from './lib/skillindex.mjs';
+import { validateSkill } from './validate-skill.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DOCS = path.join(ROOT, 'docs/ResolveAPI');
@@ -77,4 +78,11 @@ export function buildSkill() {
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const res = buildSkill();
   console.log(`Built skill: ${res.apiCount} api, ${res.settingsCount} settings, ${res.moves.length} moves.`);
+  const problems = validateSkill(OUT);
+  if (problems.length) {
+    console.error(`Skill validation FAILED (${problems.length}):`);
+    for (const p of problems) console.error(`  - ${p}`);
+    process.exit(1);
+  }
+  console.log('Skill validation passed.');
 }
