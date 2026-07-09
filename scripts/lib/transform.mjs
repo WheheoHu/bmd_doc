@@ -1,3 +1,5 @@
+import { stripFrontmatter } from './frontmatter.mjs';
+
 export function unescapeBraces(text) {
   return text.replaceAll('\\{', '{').replaceAll('\\}', '}');
 }
@@ -24,4 +26,14 @@ export function rewriteLinks(text) {
     .replaceAll('resolve_settings/', 'settings/')
     .replaceAll('resolve_api/', 'api/')
     .replaceAll('other/misc.md', 'deprecated.md');
+}
+
+export function transformDoc(raw, { kind, name }) {
+  const { data, body } = stripFrontmatter(raw);
+  const title = kind === 'settings' ? (data.title || name) : name;
+  let out = `# ${title}\n\n${body.replace(/^\s+/, '')}`;
+  out = unescapeBraces(out);
+  out = convertAdmonitions(out);
+  out = rewriteLinks(out);
+  return `${out.replace(/\s+$/, '')}\n`;
 }
