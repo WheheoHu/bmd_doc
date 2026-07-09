@@ -12,6 +12,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DOCS = path.join(ROOT, 'docs/ResolveAPI');
 const TPL = path.join(ROOT, 'scripts/skill-templates');
 const OUT = path.join(ROOT, 'skill/davinci-resolve-scripting');
+const PLUGIN = path.join(ROOT, '.claude-plugin');
 
 function mdFiles(dir) {
   return readdirSync(dir).filter((f) => f.endsWith('.md')).sort();
@@ -72,12 +73,19 @@ export function buildSkill() {
     })
   );
 
+  // plugin manifest (version tracks the Resolve doc version)
+  mkdirSync(PLUGIN, { recursive: true });
+  writeFileSync(
+    path.join(PLUGIN, 'plugin.json'),
+    injectVars(readFileSync(path.join(TPL, 'plugin.json'), 'utf8'), { VERSION: version })
+  );
+
   return { apiCount: apiNames.length, settingsCount: settings.length, moves };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const res = buildSkill();
-  console.log(`Built skill: ${res.apiCount} api, ${res.settingsCount} settings, ${res.moves.length} moves.`);
+  console.log(`Built skill: ${res.apiCount} api, ${res.settingsCount} settings, ${res.moves.length} moves; wrote .claude-plugin/plugin.json.`);
   const problems = validateSkill(OUT);
   if (problems.length) {
     console.error(`Skill validation FAILED (${problems.length}):`);

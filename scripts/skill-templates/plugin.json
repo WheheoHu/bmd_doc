@@ -1,0 +1,10 @@
+{
+  "name": "davinci-resolve",
+  "version": "{{VERSION}}",
+  "description": "Accurate DaVinci Resolve scripting API reference for AI agents — method signatures, return types, settings dictionaries, constants, object navigation, and deprecations.",
+  "author": { "name": "wheheohu", "url": "https://wheheohu.github.io/bmd_doc/" },
+  "homepage": "https://wheheohu.github.io/bmd_doc/",
+  "repository": "https://github.com/wheheohu/bmd_doc",
+  "keywords": ["davinci-resolve", "resolve-api", "scripting", "fusion", "video-editing", "python", "lua"],
+  "skills": "./skill/"
+}

@@ -247,13 +247,20 @@ After cutting the version (and before committing), regenerate the agent skill so
 the new docs, then commit the regenerated `skill/` output alongside the version snapshot:
 
 ```bash
-yarn build:skill      # regenerates skill/davinci-resolve-scripting/ and self-validates
-git add skill/
+yarn build:skill      # regenerates skill/ + .claude-plugin/plugin.json, and self-validates
+git add skill/ .claude-plugin/plugin.json
 ```
 
 The skill is generated from `docs/ResolveAPI/` by `scripts/build-skill.mjs`
 (templates in `scripts/skill-templates/`). Never hand-edit files under `skill/` — edit the
 docs or templates and re-run `yarn build:skill`.
+
+The repo also ships as an installable Claude Code plugin (`/plugin marketplace add
+wheheohu/bmd_doc` → `/plugin install davinci-resolve@bmd-doc-marketplace`). `yarn build:skill`
+auto-writes `.claude-plugin/plugin.json` with `version` set to the current Resolve version
+(so `/plugin update` delivers each release); `.claude-plugin/marketplace.json` is static and
+hand-maintained. Edit `scripts/skill-templates/plugin.json` (not the generated file) to
+change plugin metadata.
 
 ## Deployment
 - `yarn deploy` (requires `GIT_USER`), or `USE_SSH=true yarn deploy` — builds and pushes to GitHub Pages.

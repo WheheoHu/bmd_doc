@@ -27,4 +27,12 @@ test('buildSkill produces a clean skill tree from the real docs', () => {
 
   const skill = readFileSync(`${root}/SKILL.md`, 'utf8');
   assert.doesNotMatch(skill, /\{\{/, 'all template vars injected');
+
+  // plugin manifest generated with the version injected
+  const pluginRaw = readFileSync('.claude-plugin/plugin.json', 'utf8');
+  const pj = JSON.parse(pluginRaw);
+  assert.equal(pj.name, 'davinci-resolve');
+  assert.equal(pj.skills, './skill/');
+  assert.match(pj.version, /^\d+\.\d+\.\d+$/, 'version injected');
+  assert.doesNotMatch(pluginRaw, /\{\{/, 'no leftover placeholder in plugin.json');
 });

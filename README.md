@@ -2,6 +2,18 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+## Use with AI agents
+
+This repo ships a Claude Skill so AI agents write DaVinci Resolve scripts against the real API.
+Install it as a Claude Code plugin:
+
+```
+/plugin marketplace add wheheohu/bmd_doc
+/plugin install davinci-resolve@bmd-doc-marketplace
+```
+
+See [Use with AI Agents](https://wheheohu.github.io/bmd_doc/agent-skill) for details and a manual-install option.
+
 ### Installation
 
 ```

@@ -15,7 +15,21 @@ A self-contained folder, `davinci-resolve-scripting`, generated from these docs.
 a `SKILL.md` index plus `references/` files (one per API object and settings page, a
 getting-started guide, an object hierarchy map, and a deprecated/moved-method list).
 
-## Install (Claude Code / claude.ai)
+## Install
+
+### Option A — Plugin (recommended)
+
+Install it as a Claude Code plugin in two commands:
+
+```
+/plugin marketplace add wheheohu/bmd_doc
+/plugin install davinci-resolve@bmd-doc-marketplace
+```
+
+The first registers this repository as a plugin marketplace; the second installs the skill.
+Run `/plugin update` to pull new Resolve versions as they ship.
+
+### Option B — Copy the skill folder
 
 1. Get the skill folder from the repository:
    [`skill/davinci-resolve-scripting/`](https://github.com/wheheohu/bmd_doc/tree/main/skill/davinci-resolve-scripting)
@@ -23,8 +37,9 @@ getting-started guide, an object hierarchy map, and a deprecated/moved-method li
    ```bash
    cp -R skill/davinci-resolve-scripting ~/.claude/skills/
    ```
-3. Ask your agent to write a Resolve script — the skill activates automatically when the
-   request mentions DaVinci Resolve scripting.
+
+Either way: ask your agent to write a Resolve script — the skill activates automatically when
+the request mentions DaVinci Resolve scripting.
 
 ## Version
 

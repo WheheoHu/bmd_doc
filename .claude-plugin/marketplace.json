@@ -1,0 +1,10 @@
+{
+  "name": "bmd-doc-marketplace",
+  "metadata": {
+    "description": "Claude plugin marketplace for the DaVinci Resolve scripting API"
+  },
+  "owner": { "name": "wheheohu" },
+  "plugins": [
+    { "name": "davinci-resolve", "source": "./" }
+  ]
+}
