@@ -29,6 +29,12 @@ function HomepageHeader() {
             to="/workflow/UIManager">
             Workflow Integration
           </Link>
+          &nbsp;
+          <Link
+            className="button button--secondary button--lg"
+            to="/agent-skill">
+            Use with AI Agents
+          </Link>
         </div>
       </div>
     </header>

@@ -1,0 +1,31 @@
+---
+title: Use with AI Agents
+description: A Claude Skill that gives AI agents accurate DaVinci Resolve scripting API info
+---
+
+# Use with AI Agents
+
+This site ships a **Claude Skill** so AI coding agents can write DaVinci Resolve scripts
+against the *real* API — accurate method names, signatures, return types, settings
+dictionaries, constants, object navigation, and deprecations — instead of guessing.
+
+## What it is
+
+A self-contained folder, `davinci-resolve-scripting`, generated from these docs. It contains
+a `SKILL.md` index plus `references/` files (one per API object and settings page, a
+getting-started guide, an object hierarchy map, and a deprecated/moved-method list).
+
+## Install (Claude Code / claude.ai)
+
+1. Get the skill folder from the repository:
+   [`skill/davinci-resolve-scripting/`](https://github.com/wheheohu/bmd_doc/tree/main/skill/davinci-resolve-scripting)
+2. Copy it into your Claude skills directory:
+   ```bash
+   cp -R skill/davinci-resolve-scripting ~/.claude/skills/
+   ```
+3. Ask your agent to write a Resolve script — the skill activates automatically when the
+   request mentions DaVinci Resolve scripting.
+
+## Version
+
+Tracks the latest published docs version. See the [changelog](/versions) for what changed.
