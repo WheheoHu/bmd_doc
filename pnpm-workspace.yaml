@@ -1,0 +1,10 @@
+# pnpm settings (pnpm 11+ reads project settings from this file, not package.json / .npmrc).
+
+# Dependency build-script review (pnpm 11 blocks unreviewed install scripts by default).
+# core-js's only install script prints a funding banner — safe to skip.
+allowBuilds:
+  core-js: false
+
+# Pin cheerio for Docusaurus build compatibility (was the Yarn `resolutions` field).
+overrides:
+  cheerio: 1.0.0-rc.12
