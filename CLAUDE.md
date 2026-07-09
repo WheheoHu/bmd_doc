@@ -235,6 +235,18 @@ yarn docusaurus docs:version:ResolveAPI <version>    # e.g. 21.0.2
 # workflow instance:  yarn docusaurus docs:version:workflow <version>
 ```
 
+After cutting the version (and before committing), regenerate the agent skill so it tracks
+the new docs, then commit the regenerated `skill/` output alongside the version snapshot:
+
+```bash
+yarn build:skill      # regenerates skill/davinci-resolve-scripting/ and self-validates
+git add skill/
+```
+
+The skill is generated from `docs/ResolveAPI/` by `scripts/build-skill.mjs`
+(templates in `scripts/skill-templates/`). Never hand-edit files under `skill/` — edit the
+docs or templates and re-run `yarn build:skill`.
+
 This command auto-generates all three of:
 1. `ResolveAPI_versioned_docs/version-<version>/` — full snapshot of `docs/ResolveAPI/`
 2. `ResolveAPI_versioned_sidebars/version-<version>-sidebars.json`
