@@ -13,7 +13,7 @@ const TPL = path.join(ROOT, 'scripts/skill-templates');
 const OUT = path.join(ROOT, 'skill/davinci-resolve-scripting');
 
 function mdFiles(dir) {
-  return readdirSync(dir).filter((f) => f.endsWith('.md'));
+  return readdirSync(dir).filter((f) => f.endsWith('.md')).sort();
 }
 
 export function buildSkill() {
