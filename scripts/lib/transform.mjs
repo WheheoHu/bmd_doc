@@ -17,3 +17,11 @@ export function convertAdmonitions(text) {
     }
   );
 }
+
+export function rewriteLinks(text) {
+  return text
+    .replaceAll('TimelineItemPropertie s.md', 'TimelineItemProperties.md')
+    .replaceAll('resolve_settings/', 'settings/')
+    .replaceAll('resolve_api/', 'api/')
+    .replaceAll('other/misc.md', 'deprecated.md');
+}
