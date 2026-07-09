@@ -5,6 +5,63 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.0.2 update
+
+## Resolve
+
+### New
+
+- DisableBackgroundTasksForCurrentResolveSession()
+
+### Changes
+
+- OpenPage(pageName) - Now accepts the "photo" page
+- GetCurrentPage() - Can now return the "photo" page
+
+## Project
+
+### New
+
+- ResetIntellisearchAnalysis()
+- GenerateSpeech(\{speechGenerationSettings\}, timecode)
+
+## Folder
+
+### New
+
+- PerformAudioClassification()
+- ClearAudioClassification()
+- RemoveMotionBlur(\{deblurOption\})
+- AnalyzeForIntellisearch(identifyFaces, isBetterMode)
+- AnalyzeForSlate(markerColor)
+
+### Changes
+
+- TranscribeAudio() -> TranscribeAudio(useSpeakerDetection=None)
+
+## MediaPoolItem
+
+### New
+
+- PerformAudioClassification()
+- ClearAudioClassification()
+- RemoveMotionBlur(\{deblurOption\})
+- AnalyzeForIntellisearch(identifyFaces, isBetterMode)
+- AnalyzeForSlate(markerColor)
+
+### Changes
+
+- TranscribeAudio() -> TranscribeAudio(useSpeakerDetection=None)
+
+## Settings and Properties
+
+### New
+
+- Studio and AI Scripting APIs
+- Motion Deblur Settings
+- Analyze Slate Settings
+- Speech Generation Settings
+
 # Resolve 20.3.0 update
 
 ## Resolve
