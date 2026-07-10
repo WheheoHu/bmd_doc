@@ -6,5 +6,9 @@ allowBuilds:
   core-js: false
 
 # Pin cheerio for Docusaurus build compatibility (was the Yarn `resolutions` field).
+# Force React 18 types tree-wide so they match the React 18 runtime (transitive deps
+# such as @docsearch/react otherwise pull in @types/react@19, which breaks typecheck).
 overrides:
   cheerio: 1.0.0-rc.12
+  "@types/react": ^18.3.31
+  "@types/react-dom": ^18.3.7
