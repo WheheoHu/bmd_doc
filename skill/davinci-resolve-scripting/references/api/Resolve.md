@@ -1,5 +1,55 @@
 # Resolve
 
+> New in 21.0.3
+
+### GetLayoutPresetList()
+Return Type: `[presetNames...]`
+
+Returns a list of available UI layout preset names.
+
+### GetBurnInPresetList()
+Return Type: `[presetNames...]`
+
+Returns a list of available data burn in preset names.
+
+### DeleteBurnInPreset(presetName)
+Return Type: `Bool`
+
+Deletes the data burn in preset named presetName (string).
+
+### GetUserPreferencesPresetList()
+Return Type: `[presetNames...]`
+
+Returns a list of available user preferences preset names.
+
+### LoadUserPreferencesPreset(presetName)
+Return Type: `Bool`
+
+Loads the user preferences preset named presetName (string).
+
+### SaveUserPreferencesPreset(presetName)
+Return Type: `Bool`
+
+Saves the current user preferences as a preset named presetName (string).
+
+### DeleteUserPreferencesPreset(presetName)
+Return Type: `Bool`
+
+Deletes the user preferences preset named presetName (string).
+
+### ImportUserPreferencesPreset(filePath, presetName)
+Return Type: `Bool`
+
+Imports a user preferences preset from filePath (string).
+The optional argument presetName (string) specifies how the preset shall be named.
+If not specified, the preset is named based on the file base name.
+
+### ExportUserPreferencesPreset(presetName, exportPath)
+Return Type: `Bool`
+
+Exports the user preferences preset named presetName (string) to exportPath (string).
+
+------
 > New in 21.0.2
 
 ### DisableBackgroundTasksForCurrentResolveSession()

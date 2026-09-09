@@ -1,5 +1,13 @@
 # ProjectManager
 
+> New in 21.0.3
+
+### GetProjectAttributesInCurrentFolder()
+Return Type: `{projectName: {projectAttributes}}`
+
+Returns a dict of project names in the current folder mapped to their attributes. Refer to section [Project Attributes](../settings/ProjectAttributes.md) for the supported keys.
+
+-----
 > New in 19.1.0
 
 ###  LoadCloudProject(cloudSettings)

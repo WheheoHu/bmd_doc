@@ -1,0 +1,23 @@
+DaVinci Resolve Workflow Integration Changelog
+----------------------------------------------
+
+Last Updated: 28 July 2025
+
+This document tracks changes in Workflow integration framework and behavior.
+For the overall workflow integrations documentation, please refer to Developer/Workflow Integrations/README.txt.
+For Scripting APIs, please refer to Developer/Scripting/CHANGELOG.md for changes, and Developer/Scripting/README.md for overview.
+
+Changes by DaVinci Resolve version:
+-----------------------------------
+
+## 20.1
+
+* Update to Electron 36.3.2.
+* New promise based Javascript asynchronous APIs.
+* New promise based workflow integration example.
+* Improved handling of large lists and data collections in Javascript based workflows.
+* Addressed unresponsive queries when a DaVinci Resolve modal dialog is active.
+
+## 20.0
+
+* General performance improvements.

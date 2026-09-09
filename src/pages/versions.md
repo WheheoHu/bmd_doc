@@ -5,6 +5,34 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.0.3 update
+
+## Resolve
+
+### New
+
+- GetLayoutPresetList()
+- GetBurnInPresetList()
+- DeleteBurnInPreset(presetName)
+- GetUserPreferencesPresetList()
+- LoadUserPreferencesPreset(presetName)
+- SaveUserPreferencesPreset(presetName)
+- DeleteUserPreferencesPreset(presetName)
+- ImportUserPreferencesPreset(filePath, presetName)
+- ExportUserPreferencesPreset(presetName, exportPath)
+
+## ProjectManager
+
+### New
+
+- GetProjectAttributesInCurrentFolder()
+
+## Settings and Properties
+
+### New
+
+- Project Attributes
+
 # Resolve 21.0.2 update
 
 ## Resolve

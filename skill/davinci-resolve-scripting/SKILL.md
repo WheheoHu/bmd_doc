@@ -6,7 +6,7 @@ description: Use when writing, editing, or debugging DaVinci Resolve scripting A
 # DaVinci Resolve Scripting API
 
 Accurate reference for the DaVinci Resolve scripting API, generated from the versioned
-docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.0.2** (docs last
+docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.0.3** (docs last
 updated 26 May 2026). Use these files instead of guessing method names — the Resolve
 API is easy to hallucinate.
 
@@ -64,6 +64,7 @@ headless mode, and the object hierarchy, read:
 - [Keyframe Mode Information](references/settings/KeyframeModeInformation.md)
 - [Motion Deblur Settings](references/settings/MotionDeblurSettings.md)
 - [Project and Clip Properties](references/settings/ProjectAndClipProperties.md)
+- [Project Attributes](references/settings/ProjectAttributes.md)
 - [Render Settings](references/settings/RenderSettings.md)
 - [Speech Generation Settings](references/settings/SpeechGenerationSettings.md)
 - [Studio and AI Scripting APIs](references/settings/StudioAndAIScriptingAPIs.md)
