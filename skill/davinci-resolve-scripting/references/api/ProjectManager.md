@@ -83,6 +83,11 @@ Return Type: `[folder names...]`
 
 Returns a list of folder names in current folder.
 
+### GetProjectLastModifiedTime(projectName)
+Return Type: `int`
+
+Returns the last modified time of the project 'projectName' as an epoch timestamp.
+
 ###  GetProjectListInCurrentFolder()            
 Return Type: `[project names...]`
 

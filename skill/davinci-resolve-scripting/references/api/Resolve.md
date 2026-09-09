@@ -1,5 +1,73 @@
 # Resolve
 
+> New in 21.1.0
+
+### GetCurrentProject()
+Return Type: `Project`
+
+Returns the currently loaded Resolve [Project](./Project.md).
+
+### GetCurrentTimeline()
+Return Type: `Timeline`
+
+Returns the currently loaded [Timeline](./Timeline.md).
+
+### GetMediaPool()
+Return Type: `MediaPool`
+
+Returns the [MediaPool](./MediaPool.md) object for the current project.
+
+### GetGallery()
+Return Type: `Gallery`
+
+Returns the [Gallery](./Gallery.md) object for the current project.
+
+### GetKeyboardPresetList()
+Return Type: `[presetNames...]`
+
+Returns a list of available keyboard preset names.
+
+### GetCurrentKeyboardPreset()
+Return Type: `string`
+
+Returns the name of the currently active keyboard preset.
+
+### LoadKeyboardPreset(presetName)
+Return Type: `Bool`
+
+Loads the keyboard preset named presetName (string).
+
+### DeleteKeyboardPreset(presetName)
+Return Type: `Bool`
+
+Deletes the keyboard preset named presetName (string).
+
+### ImportKeyboardPreset(filePath, presetName)
+Return Type: `Bool`
+
+Imports a keyboard preset from filePath (string).
+The optional argument presetName (string) specifies how the preset shall be named.
+If not specified, the preset is named based on the file base name.
+
+### ExportKeyboardPreset(presetName, exportPath)
+Return Type: `Bool`
+
+Exports the keyboard preset named presetName (string) to exportPath (string).
+
+### ValidateDCTL(dctlSource)
+Return Type: `string`
+
+Validates the DCTL source code dctlSource (string). Returns None on success, or an error string on failure.
+
+### EncryptDCTL(inputPath, [{encryptDCTLOptions}])
+Return Type: `Bool`
+
+Encrypts the DCTL at inputPath (string) and writes it to an output folder.
+
+Refer to [Encrypt DCTL Options](../settings/EncryptDCTLOptions.md) for information on supported settings.
+
+------
+
 > New in 21.0.3
 
 ### GetLayoutPresetList()
@@ -154,6 +222,11 @@ Return Type: `Bool`
 
 Import a preset from presetPath (string) and set it as current preset for rendering.
 
+### IsStudio()
+Return Type: `Bool`
+
+Returns True if this is the Studio version of the product, False for the free version.
+
 ###  LoadLayoutPreset(presetName)                   
 Return Type: `Bool`
 
@@ -174,6 +247,11 @@ Quits the Resolve App.
 Return Type: `Bool`
 
 Saves current UI layout as a preset named presetName.
+
+### SetHighPriority(highPriority)
+Return Type: `Bool`
+
+Sets the script execution priority to high or normal, based on highPriority (Bool).
 
 ###  UpdateLayoutPreset(presetName)                 
 Return Type: `Bool`

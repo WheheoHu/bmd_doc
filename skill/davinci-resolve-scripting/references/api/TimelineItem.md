@@ -1,5 +1,111 @@
 # TimelineItem
 
+> New in 21.1.0
+
+### GetType()
+Return Type: `string`
+
+Returns the type of the item, one of "video", "audio", "generator" or "transition".
+
+### GetProperties()
+Return Type: `{properties}`
+
+Returns a dict with all supported item properties.
+
+Refer to [Timeline Item Properties](../settings/TimelineItemProperties.md) for the supported keys.
+
+### SetProperties({properties})
+Return Type: `Bool`
+
+Sets the item properties with the specified dict of property keys and values.
+
+Refer to [Timeline Item Properties](../settings/TimelineItemProperties.md) for the supported keys.
+
+### GetFades()
+Return Type: `{fades}`
+
+Returns a dict `{FadeIn, FadeOut}` of the fade durations (in frames) for the item's video or audio fader.
+
+Refer to [Fade Info](../settings/FadeInfo.md) for the supported keys.
+
+### SetFades({fades})
+Return Type: `Bool`
+
+Sets the fade durations (in frames) for the item's video or audio fader, from a dict `{FadeIn, FadeOut}`.
+
+Refer to [Fade Info](../settings/FadeInfo.md) for the supported keys.
+
+### GetSpeed()
+Return Type: `{speedOptions}`
+
+Returns the clip speed options.
+
+Refer to [Speed Options](../settings/SpeedOptions.md) for the returned keys.
+
+### SetSpeed({speedOptions})
+Return Type: `Bool`
+
+Sets the clip speed.
+
+Refer to [Speed Options](../settings/SpeedOptions.md) for information on supported settings.
+
+### GetOutputBlanking()
+Return Type: `{outputBlanking}`
+
+Returns the output blanking for the clip as a dict with the keys "Top", "Bottom", "Left" and "Right". The values are in pixels.
+The dict will be empty if the timeline's output blanking is used.
+
+Refer to [Output Blanking](../settings/OutputBlanking.md) for the supported keys.
+
+### SetOutputBlanking({outputBlanking})
+Return Type: `Bool`
+
+Sets the output blanking for the clip. Accepts a dict with the keys "Top", "Bottom", "Left" and "Right". The values are in pixels.
+
+Refer to [Output Blanking](../settings/OutputBlanking.md) for the supported keys.
+
+### GetUseTimelineForOutputBlanking()
+Return Type: `Bool`
+
+Gets the flag that makes the clip use the timeline's output blanking.
+
+### SetUseTimelineForOutputBlanking(useTimelineOutputBlanking)
+Return Type: `Bool`
+
+Sets the flag that makes the clip use the timeline's output blanking.
+
+### AddTransition({transitionOptions})
+Return Type: `TimelineItem`
+
+Adds a transition of the given type and category to the start or end of this item. Returns the created transition item, or None on failure.
+
+Refer to [Transition Options](../settings/TransitionOptions.md) for information on supported settings.
+
+### FlattenMulticam(gradeOption)
+Return Type: `Bool`
+
+Flattens the multicam TimelineItem, using the grade source specified by gradeOption.
+
+Refer to [Multicam Options](../settings/MulticamOptions.md) for the supported grade options.
+
+### PerformMulticamSmartSwitch({smartSwitchSettings})
+Return Type: `Bool`
+
+Performs Multicam SmartSwitch on the multicam TimelineItem, using the given settings.
+
+Refer to [Smart Switch Settings](../settings/SmartSwitchSettings.md) for information on supported settings.
+
+Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
+
+### SetSourceAudioChannelMapping(audioMapping)
+Return Type: `Bool`
+
+Sets the source audio channel mapping of the item from the JSON string audioMapping.
+
+Refer to [Audio Mapping](../settings/AudioMapping.md) for the mapping format.
+
+---
+
 > New in 20.2.0
 
 ### SetName(name)
@@ -414,6 +520,9 @@ Returns the item name.
 
 ### GetProperty(propertyKey)
 
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `int/[key:value]`
 
 returns the value of the specified key.
@@ -574,6 +683,9 @@ The lutPath can be an absolute path, or a relative path (based off custom LUT pa
 The operation is successful for valid lut paths that Resolve has already discovered (see [RefreshLUTList()](./Project.md#refreshlutlist)).~~
 
 ### SetProperty(propertyKey, propertyValue)
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
 
 Return Type: `Bool`
 

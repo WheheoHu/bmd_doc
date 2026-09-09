@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { unescapeBraces, convertAdmonitions, rewriteLinks, transformDoc } from './transform.mjs';
+import { unescapeBraces, convertAdmonitions, rewriteLinks, rewriteDeprecatedLinks, transformDoc } from './transform.mjs';
 
 test('unescapeBraces restores MDX-escaped braces', () => {
   assert.equal(unescapeBraces('RemoveMotionBlur(\\{deblurOption\\})'), 'RemoveMotionBlur({deblurOption})');
@@ -31,8 +31,23 @@ test('rewriteLinks remaps doc folders and the space filename', () => {
     '[Z](../settings/TimelineItemProperties.md)'
   );
   assert.equal(
+    rewriteLinks('[Z](../resolve_settings/TimelineItemPropertie%20s.md)'),
+    '[Z](../settings/TimelineItemProperties.md)'
+  );
+  assert.equal(
     rewriteLinks('[D](../other/misc.md)'),
     '[D](../deprecated.md)'
+  );
+});
+
+test('rewriteDeprecatedLinks resolves from references/ instead of a sibling folder', () => {
+  assert.equal(
+    rewriteDeprecatedLinks('[A](../resolve_api/Project.md#getsettings)'),
+    '[A](./api/Project.md#getsettings)'
+  );
+  assert.equal(
+    rewriteDeprecatedLinks('[B](../resolve_settings/ProjectAndClipProperties.md)'),
+    '[B](./settings/ProjectAndClipProperties.md)'
   );
 });
 

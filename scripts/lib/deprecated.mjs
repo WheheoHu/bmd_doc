@@ -1,5 +1,5 @@
 import { stripFrontmatter } from './frontmatter.mjs';
-import { unescapeBraces } from './transform.mjs';
+import { convertAdmonitions, rewriteDeprecatedLinks, unescapeBraces } from './transform.mjs';
 
 export function scanMoves(raw, objectName) {
   const moves = [];
@@ -19,6 +19,9 @@ export function buildDeprecated(miscRaw, moves) {
   const { data, body } = stripFrontmatter(miscRaw);
   const title = data.title || 'Deprecated API';
   let out = `# ${title}\n\n${body.replace(/^\s+/, '')}`;
+  out = unescapeBraces(out);
+  out = convertAdmonitions(out);
+  out = rewriteDeprecatedLinks(out);
   const seen = new Set();
   const rows = [];
   for (const m of moves) {

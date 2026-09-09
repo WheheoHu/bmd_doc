@@ -5,6 +5,169 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.1.0 update
+
+## Resolve
+
+### New
+
+- GetCurrentProject()
+- GetCurrentTimeline()
+- GetMediaPool()
+- GetGallery()
+- GetKeyboardPresetList()
+- GetCurrentKeyboardPreset()
+- LoadKeyboardPreset(presetName)
+- DeleteKeyboardPreset(presetName)
+- ImportKeyboardPreset(filePath, presetName)
+- ExportKeyboardPreset(presetName, exportPath)
+- ValidateDCTL(dctlSource)
+- EncryptDCTL(inputPath, [\{encryptDCTLOptions\}])
+- IsStudio() - long-standing API, newly documented
+- SetHighPriority(highPriority) - long-standing API, newly documented
+
+## ProjectManager
+
+### New
+
+- GetProjectLastModifiedTime(projectName) - long-standing API, newly documented
+
+## Project
+
+### New
+
+- GetSettings()
+- SetSettings(\{settings\})
+- GetProjectSettingsPresetList()
+- SetProjectSettingsPreset(presetName)
+- UpdateProjectSettingsPreset(presetName)
+- DeleteProjectSettingsPreset(presetName)
+- ImportProjectSettingsPreset(filePath, presetName)
+- ExportProjectSettingsPreset(presetName, exportPath)
+- SaveCurrentProjectSettingsAsNewPreset(presetName)
+- UpdateRenderPreset(presetName)
+- SetQuickExportEnabledForRenderPreset(presetName, isEnabled)
+- GetAudioRenderFormats()
+- GetAudioRenderCodecs(audioRenderFormatFileExtension)
+
+### Remove
+
+- GetPresetList() - deprecated
+- SetPreset(presetName) - deprecated
+
+### Changes
+
+- GetSetting(settingName) - deprecated calling convention, use GetSettings()
+- SetSetting(settingName, settingValue) - deprecated calling convention, use SetSettings(\{settings\}). The 4-argument superScale form is not deprecated
+
+## MediaPool
+
+### New
+
+- CreateMulticamClip([clips], \{multicamOptions\})
+
+### Changes
+
+- AppendToTimeline([clips]) and AppendToTimeline(clip1, clip2, ...) - deprecated calling conventions
+- CreateTimelineFromClips(name, [clips]) and CreateTimelineFromClips(name, clip1, clip2,...) - deprecated calling conventions
+- ImportMedia([items...]) - deprecated calling convention, use ImportMedia([\{clipInfo\}])
+
+## MediaPoolItem
+
+### New
+
+- GetTranscription(useNestedClipTranscription=False)
+- SetAudioMapping(audioMapping)
+
+### Changes
+
+- SetMetadata(metadataType, metadataValue) and SetThirdPartyMetadata(metadataType, metadataValue) - deprecated calling conventions
+- GetMetadata(metadataType=None) and GetClipProperty(propertyName=None) - passing an argument is a deprecated calling convention
+
+## Timeline
+
+### New
+
+- GetSettings()
+- SetSettings(\{settings\})
+- GetOutputBlanking()
+- SetOutputBlanking(\{outputBlanking\})
+- GetNormalizeAudioModes()
+- NormalizeAudioLevel([timelineItems], [\{normalizeAudioOptions\}])
+- AutoAlignClips([timelineItems], [\{autoAlignOptions\}])
+
+### Changes
+
+- GetSetting(settingName) - deprecated calling convention, use GetSettings()
+- SetSetting(settingName, settingValue) - deprecated calling convention, use SetSettings(\{settings\})
+
+## TimelineItem
+
+### New
+
+- GetType()
+- GetProperties()
+- SetProperties(\{properties\})
+- GetFades()
+- SetFades(\{fades\})
+- GetSpeed()
+- SetSpeed(\{speedOptions\})
+- GetOutputBlanking()
+- SetOutputBlanking(\{outputBlanking\})
+- GetUseTimelineForOutputBlanking()
+- SetUseTimelineForOutputBlanking(useTimelineOutputBlanking)
+- AddTransition(\{transitionOptions\})
+- FlattenMulticam(gradeOption)
+- PerformMulticamSmartSwitch(\{smartSwitchSettings\})
+- SetSourceAudioChannelMapping(audioMapping)
+
+### Changes
+
+- GetProperty(propertyKey) - deprecated calling convention, use GetProperties()
+- SetProperty(propertyKey, propertyValue) - deprecated calling convention, use SetProperties(\{properties\})
+
+## MediaStorage
+
+### New
+
+- StartCloneMedia(sourceDir, targetDirs)
+- StopCloneMedia()
+- GetCloneStatus()
+- SetCloneToolSettings([\{cloneToolSettings\}])
+
+### Changes
+
+- AddItemListToMediaPool([items...]) and AddItemListToMediaPool(item1, item2, ...) - deprecated calling conventions
+
+## GalleryStillAlbum
+
+### New
+
+- ImportStills([filePaths]) - long-standing API, newly documented
+
+## Settings and Properties
+
+### New
+
+- Multicam Options
+- Smart Switch Settings
+- Transition Options
+- Output Blanking
+- Normalize Audio Options
+- Auto Align Options
+- Speed Options
+- Fade Info
+- Transcription
+- Clone Tool Settings
+- Encrypt DCTL Options
+- Project Settings Preset Info
+
+### Changes
+
+- Project and Clip Properties: now enumerates all 158 project settings keys and all 69 timeline settings keys
+- Timeline Item Properties: now enumerates all 47 keys, including the new native audio and "...Enabled" properties
+- Deprecated API: added the Deprecated Calling Conventions section
+
 # Resolve 21.0.4 update
 
 ## Timeline

@@ -22,10 +22,19 @@ export function convertAdmonitions(text) {
 
 export function rewriteLinks(text) {
   return text
-    .replaceAll('TimelineItemPropertie s.md', 'TimelineItemProperties.md')
+    .replace(/TimelineItemPropertie(?:%20| )s\.md/g, 'TimelineItemProperties.md')
     .replaceAll('resolve_settings/', 'settings/')
     .replaceAll('resolve_api/', 'api/')
     .replaceAll('other/misc.md', 'deprecated.md');
+}
+
+// deprecated.md sits one level above references/api/ and references/settings/,
+// so its links resolve from references/ rather than from a sibling folder.
+export function rewriteDeprecatedLinks(text) {
+  return rewriteLinks(text)
+    .replaceAll('](../api/', '](./api/')
+    .replaceAll('](../settings/', '](./settings/')
+    .replaceAll('](../deprecated.md', '](./deprecated.md');
 }
 
 export function transformDoc(raw, { kind, name }) {

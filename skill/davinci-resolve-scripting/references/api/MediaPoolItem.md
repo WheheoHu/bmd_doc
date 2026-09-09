@@ -1,5 +1,26 @@
 # MediaPoolItem
 
+> New in 21.1.0
+
+### GetTranscription(useNestedClipTranscription=False)
+Return Type: `{transcription}`
+
+Returns transcription data for the MediaPoolItem, if available.
+The optional argument useNestedClipTranscription (Bool) returns the transcription of nested clips instead.
+
+Refer to [Transcription](../settings/Transcription.md) for the returned keys.
+
+Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
+
+### SetAudioMapping(audioMapping)
+Return Type: `Bool`
+
+Sets the audio mapping of the MediaPoolItem from the JSON string audioMapping.
+
+Refer to [Audio Mapping](../settings/AudioMapping.md) for the mapping format.
+
+---
+
 > New in 21.0.4
 
 ### GetTimeline()
@@ -128,6 +149,9 @@ If no argument is specified, a dict of all set third party metadata properties i
 
 ### SetThirdPartyMetadata(metadataType, metadataValue)
 
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `Bool`
 
 Sets/Add the given third party metadata to metadataValue (string).Returns True if successful.
@@ -218,6 +242,9 @@ Returns the property value for the key 'propertyName'.
 If no argument is specified, a dict of all clip properties is returned.
 Check the [Project and Clip Properties](../settings/ProjectAndClipProperties.md) below for more information.
 
+> ⚠️ Passing `propertyName` is a [deprecated calling convention](../deprecated.md#deprecated-calling-conventions) since 21.1.0 — call the method with no argument and read the key from the returned dict.
+
+
 ### GetFlagList()
 
 Return Type: `[colors...]`
@@ -262,6 +289,9 @@ Return Type: `string|dict`
 
 Returns the metadata value for the key 'metadataType'.
 If no argument is specified, a dict of all set metadata properties is returned.
+
+> ⚠️ Passing `metadataType` is a [deprecated calling convention](../deprecated.md#deprecated-calling-conventions) since 21.1.0 — call the method with no argument and read the key from the returned dict.
+
 
 ### GetName()
 
@@ -308,6 +338,9 @@ Sets the item metadata with specified 'metadata' dict. Returns
 True if successful.
 
 ### SetMetadata(metadataType, metadataValue)
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
 
 Return Type: `Bool`
 

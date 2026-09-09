@@ -20,6 +20,11 @@ Return Type: `[galleryStill]`
 
 Returns the list of GalleryStill objects in the album.
 
+### ImportStills([filePaths])
+Return Type: `Bool`
+
+Imports a GalleryStill from each filePath in the list 'filePaths'.
+
 ### SetLabel(galleryStill, label)                   
 Return Type: `Bool`
 

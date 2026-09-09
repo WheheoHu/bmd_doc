@@ -1,5 +1,82 @@
 # Project
 
+> New in 21.1.0
+
+### GetSettings()
+Return Type: `{settings}`
+
+Returns a dict with all project settings.
+
+Refer to [Project and Clip Properties](../settings/ProjectAndClipProperties.md) for the supported keys.
+
+### SetSettings({settings})
+Return Type: `Bool`
+
+Sets the project settings with the specified dict of setting names and values.
+
+Refer to [Project and Clip Properties](../settings/ProjectAndClipProperties.md) for the supported keys.
+
+### GetProjectSettingsPresetList()
+Return Type: `[{presetInfo}...]`
+
+Returns a list of project settings presets and their information.
+
+Refer to [Project Settings Preset Info](../settings/ProjectSettingsPresetInfo.md) for the returned keys.
+
+### SetProjectSettingsPreset(presetName)
+Return Type: `Bool`
+
+Sets the project settings preset named presetName (string) into the project.
+
+### UpdateProjectSettingsPreset(presetName)
+Return Type: `Bool`
+
+Updates the project settings preset named presetName (string) with the current settings.
+
+### DeleteProjectSettingsPreset(presetName)
+Return Type: `Bool`
+
+Deletes the project settings preset named presetName (string).
+
+### ImportProjectSettingsPreset(presetFilePath, presetName)
+Return Type: `Bool`
+
+Imports a project settings preset from presetFilePath (string).
+The optional argument presetName (string) specifies how the preset shall be named.
+If not specified, the preset is named based on the file base name.
+
+### ExportProjectSettingsPreset(presetName, exportPath)
+Return Type: `Bool`
+
+Exports the project settings preset named presetName (string) to exportPath (string).
+
+### SaveCurrentProjectSettingsAsNewPreset(presetName)
+Return Type: `Bool`
+
+Saves the current project settings as a new preset named presetName (string).
+
+### UpdateRenderPreset(presetName)
+Return Type: `Bool`
+
+Updates the render preset named presetName (string) with the current render settings.
+
+### SetQuickExportEnabledForRenderPreset(presetName, isEnabled)
+Return Type: `Bool`
+
+Enables or disables quick export for the render preset named presetName (string), based on isEnabled (Bool).
+
+### GetAudioRenderFormats()
+Return Type: `{formatDescription: fileExtension...}`
+
+Returns a dict of available audio render formats, mapping each format description to its file extension.
+
+### GetAudioRenderCodecs(audioRenderFormatFileExtension)
+Return Type: `{codecDescription: codecName...}`
+
+Returns a dict of the audio codecs available for the audio render format identified by audioRenderFormatFileExtension (string), mapping each codec description to its codec name.
+
+---
+
 > New in 21.0.2
 
 ### ResetIntellisearchAnalysis()
@@ -149,9 +226,12 @@ Returns project name.
 
 ### GetPresetList()
 
-Return Type: `[presets...]`
+> ⚠️ Deprecated since 21.1.0. Refer to [Deprecated API](../deprecated.md#deprecated-resolve-api-functions).
 
-Returns a list of presets and their information.
+
+~~Return Type: `[presets...]`~~
+
+~~Returns a list of presets and their information.~~
 
 ### GetRenderCodecs(renderFormat)
 
@@ -190,6 +270,9 @@ Return Type: `[{Resolution}]`
 Returns list of resolutions applicable for the given render format (string) and render codec (string). Returns full list of resolutions if no argument is provided. Each element in the list is a dictionary with 2 keys "Width" and "Height".
 
 ### GetSetting(settingName)
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
 
 Return Type: `string`
 
@@ -276,9 +359,12 @@ Sets project name if given projectName (string) is unique.
 
 ### SetPreset(presetName)
 
-Return Type: `Bool`
+> ⚠️ Deprecated since 21.1.0. Refer to [Deprecated API](../deprecated.md#deprecated-resolve-api-functions).
 
-Sets preset by given presetName (string) into project.
+
+~~Return Type: `Bool`~~
+
+~~Sets preset by given presetName (string) into project.~~
 
 ### SetRenderSettings({settings})
 
@@ -290,10 +376,16 @@ Sets given settings for rendering. Settings is a dict, with support for the keys
 
 ### SetSetting(settingName, settingValue)
 
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `Bool`
 
 Sets the project setting (indicated by settingName, string) to the value (settingValue, string).
 Check the [Project and Clip Properties](../settings/ProjectAndClipProperties.md) below for more information.
+
+> The 4-argument form `SetSetting('superScale', 2, sharpnessValue, noiseReductionValue)`, used to select the Super Scale multiplier "2x Enhanced", is **not** deprecated — it has no [`SetSettings`](#setsettingssettings) equivalent.
+
 
 ### StartRendering([jobIds...], isInteractiveMode=False)
 

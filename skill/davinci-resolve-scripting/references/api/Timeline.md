@@ -1,5 +1,56 @@
 # Timeline
 
+> New in 21.1.0
+
+### GetSettings()
+Return Type: `{settings}`
+
+Returns a dict with all timeline settings, or the project settings when the timeline setting "useCustomSettings" is "0".
+
+Refer to [Project and Clip Properties](../settings/ProjectAndClipProperties.md) for the supported keys.
+
+### SetSettings({settings})
+Return Type: `Bool`
+
+Sets the timeline settings with the specified dict of setting names and values.
+
+Refer to [Project and Clip Properties](../settings/ProjectAndClipProperties.md) for the supported keys.
+
+### GetOutputBlanking()
+Return Type: `{outputBlanking}`
+
+Returns the output blanking for the timeline as a dict with the keys "Top", "Bottom", "Left" and "Right". The values are in pixels.
+
+Refer to [Output Blanking](../settings/OutputBlanking.md) for the supported keys.
+
+### SetOutputBlanking({outputBlanking})
+Return Type: `Bool`
+
+Sets the output blanking for the timeline. Accepts a dict with the keys "Top", "Bottom", "Left" and "Right". The values are in pixels.
+
+Refer to [Output Blanking](../settings/OutputBlanking.md) for the supported keys.
+
+### GetNormalizeAudioModes()
+Return Type: `[modeNames...]`
+
+Returns the list of valid normalizationMode strings accepted by [NormalizeAudioLevel](#normalizeaudioleveltimelineitems-normalizeaudiooptions).
+
+### NormalizeAudioLevel([timelineItems], [{normalizeAudioOptions}])
+Return Type: `Bool`
+
+Normalizes the audio level of the specified [TimelineItem](./TimelineItem.md) list, using the given options.
+
+Refer to [Normalize Audio Options](../settings/NormalizeAudioOptions.md) for information on supported settings.
+
+### AutoAlignClips([timelineItems], [{autoAlignOptions}])
+Return Type: `Bool`
+
+Aligns the specified [TimelineItem](./TimelineItem.md) list, using the given options. Returns True if successful, False otherwise.
+
+Refer to [Auto Align Options](../settings/AutoAlignOptions.md) for information on supported settings.
+
+---
+
 > New in 21.0.4
 
 ### GetSelectedClips()
@@ -321,6 +372,9 @@ Returns the timeline name.
 
 ### GetSetting(settingName)
 
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `string`
 
 Returns value of timeline setting (indicated by settingName : string).
@@ -441,6 +495,9 @@ Return Type: `Bool`
 Sets the timeline name if timelineName (string) is unique. Returns True if successful.
 
 ### SetSetting(settingName, settingValue)
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
 
 Return Type: `Bool`
 

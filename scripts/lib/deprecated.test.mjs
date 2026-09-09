@@ -46,3 +46,28 @@ test('buildDeprecated dedups repeats, rewrites settings/api targets, and unescap
   assert.match(out, /`Folder\.RemoveMotionBlur\(\{deblurOption\}\)`/);         // braces unescaped
   assert.doesNotMatch(out, /\\\{/);                                            // no escaped braces remain
 });
+
+test('buildDeprecated converts admonitions, unescapes braces and rewrites body links', () => {
+  const misc = [
+    '---',
+    'title: Deprecated API',
+    '---',
+    '### Deprecated Calling Conventions',
+    '',
+    'Use [`Project:SetSettings`](../resolve_api/Project.md#setsettingssettings) instead.',
+    '',
+    'MediaStorage.AddItemListToMediaPool(\\{itemInfo\\})',
+    '',
+    ':::note',
+    '',
+    'The 4-argument form is not deprecated.',
+    '',
+    ':::',
+    '',
+  ].join('\n');
+  const out = buildDeprecated(misc, []);
+  assert.match(out, /\[`Project:SetSettings`\]\(\.\/api\/Project\.md#setsettingssettings\)/);
+  assert.match(out, /^> The 4-argument form is not deprecated\.$/m);
+  assert.doesNotMatch(out, /:::/);
+  assert.doesNotMatch(out, /\\\{/);
+});

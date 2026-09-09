@@ -1,5 +1,16 @@
 # MediaPool
 
+> New in 21.1.0
+
+### CreateMulticamClip([clips], {multicamOptions})
+Return Type: `[MediaPoolItems]`
+
+Creates Multicam clips from the specified [MediaPoolItem](./MediaPoolItem.md) list, using the given options. Returns the list of created [MediaPoolItem](./MediaPoolItem.md)s.
+
+Refer to [Multicam Options](../settings/MulticamOptions.md) for information on supported settings.
+
+-----
+
 > New in 19.0.2
 
 ### AutoSyncAudio([MediaPoolItems], {audioSyncSettings})
@@ -38,12 +49,20 @@ Appends list of clipInfos specified as dict of mediaPoolItem, startFrame (float/
 Returns the list of appended [TimelineItem](./TimelineItem.md) .
 
 ### AppendToTimeline([clips])                       
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `[TimelineItem]`
 
 Appends specified [MediaPoolItem](./MediaPoolItem.md)  objects in the current timeline. 
 Returns the list of appended [TimelineItem](./TimelineItem.md) .
 
 ### AppendToTimeline(clip1, clip2, ...)             
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `[TimelineItem]`
 
 Appends specified [MediaPoolItem](./MediaPoolItem.md)  objects in the current timeline. 
@@ -67,11 +86,19 @@ Return Type: `Timeline`
 Creates new [Timeline](./Timeline.md)  with specified name, appending the list of clipInfos specified as a dict of "[MediaPoolItem](./MediaPoolItem.md) ", "startFrame" (float/int), "endFrame" (float/int), "recordFrame" (float/int).
 
 ### CreateTimelineFromClips(name, [clips])          
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `Timeline`
 
 Creates new [Timeline](./Timeline.md)  with specified name, and appends the specified [MediaPoolItem](./MediaPoolItem.md)  objects.
 
 ### CreateTimelineFromClips(name, clip1, clip2,...) 
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `Timeline`
 
 Creates new [Timeline](./Timeline.md)  with specified name, and appends the specified [MediaPoolItem](./MediaPoolItem.md)  objects.
@@ -147,6 +174,10 @@ ImportMedia([{"FilePath": "file_%03d.dpx", "StartIndex": 1, "EndIndex": 100}])
 ```
 would import clip "file_[001-100].dpx".
 ### ImportMedia([items...])                         
+
+> ⚠️ Deprecated calling convention since 21.1.0. Refer to [Deprecated Calling Conventions](../deprecated.md#deprecated-calling-conventions).
+
+
 Return Type: `[MediaPoolItems]`
 
 Imports specified file/folder paths into current Media Pool folder. 
