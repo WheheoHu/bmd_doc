@@ -1,5 +1,15 @@
 # MediaPoolItem
 
+> New in 21.0.4
+
+### GetTimeline()
+
+Return Type: `Timeline`
+
+Returns the [Timeline](./Timeline.md) object if the MediaPoolItem is a timeline clip.
+
+---
+
 > New in 21.0.2
 
 ### PerformAudioClassification()

@@ -1,5 +1,16 @@
 # Timeline
 
+> New in 21.0.4
+
+### GetSelectedClips()
+
+Return Type: `[TimelineItems]`
+
+Returns the currently selected [TimelineItem](./TimelineItem.md)s.
+
+---
+
+
 > New in 20.1.0
 
 ### GetVoiceIsolationState(trackIndex)

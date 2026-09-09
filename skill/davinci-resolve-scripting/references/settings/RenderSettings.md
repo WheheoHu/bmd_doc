@@ -1,6 +1,6 @@
 # Render Settings
 
-This section covers the supported settings for the method [SetRenderSettings](https://www.notion.so/SetRenderSettings-settings-fc22f5fc5d0f40de8b0dfd45dd8bdd4b?pvs=21)(settings)
+This section covers the supported settings for the method [`Project:SetRenderSettings`](../api/Project.md#setrendersettingssettings).
 
 The parameter setting is a dictionary containing the following keys:
 
@@ -63,3 +63,9 @@ The parameter setting is a dictionary containing the following keys:
 `ExportSubtitle`: Bool
 
 `SubtitleFormat`: string (options: "BurnIn", "EmbeddedCaptions", "SeparateFile")
+
+`UseFullExtents`: Bool (renders the full extents of each clip)
+
+`AddFrameHandles`: int (number of frame handles to add, >= 0. Ignored when `UseFullExtents` is True)
+
+`DataBurnIn`: string (data burn in preset name, examples: "Same as project", "None")

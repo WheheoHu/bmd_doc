@@ -1,6 +1,6 @@
 # Getting Started with Resolve Scripting
 
-Covers Resolve **21.0.3** (docs last updated 26 May 2026).
+Covers Resolve **21.0.4** (docs last updated 26 May 2026).
 
 ## Prerequisites
 

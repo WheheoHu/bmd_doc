@@ -6,7 +6,7 @@ description: Use when writing, editing, or debugging DaVinci Resolve scripting A
 # DaVinci Resolve Scripting API
 
 Accurate reference for the DaVinci Resolve scripting API, generated from the versioned
-docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.0.3** (docs last
+docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.0.4** (docs last
 updated 26 May 2026). Use these files instead of guessing method names — the Resolve
 API is easy to hallucinate.
 

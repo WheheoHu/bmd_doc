@@ -5,6 +5,26 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.0.4 update
+
+## Timeline
+
+### New
+
+- GetSelectedClips()
+
+## MediaPoolItem
+
+### New
+
+- GetTimeline()
+
+## Settings and Properties
+
+### Changes
+
+- Render Settings: added UseFullExtents, AddFrameHandles and DataBurnIn
+
 # Resolve 21.0.3 update
 
 ## Resolve
