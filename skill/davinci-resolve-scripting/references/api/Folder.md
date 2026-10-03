@@ -80,11 +80,17 @@ Return Type: `string`
 
 Returns a unique ID for the media pool folder
 
-### TranscribeAudio(useSpeakerDetection=None)
+### TranscribeAudio(useSpeakerDetection=None, transcribeAsNestedClip=False)
+
+> ⚠️ Change at 21.1.0
+
+
 Return Type: `Bool`
 
 Transcribes audio of the MediaPoolItems within the folder and nested folders. Returns True if successful; False otherwise
 
 Accepts an optional boolean argument to use speaker detection when transcribing. If no argument is specified, use the project's setting.
+
+The optional argument transcribeAsNestedClip (Bool) transcribes the audio as a nested clip transcription, which [MediaPoolItem.GetTranscription](./MediaPoolItem.md#gettranscriptionusenestedcliptranscriptionfalse) returns when useNestedClipTranscription is True.
 
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.

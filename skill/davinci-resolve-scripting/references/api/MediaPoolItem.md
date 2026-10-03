@@ -201,11 +201,16 @@ Return Type: `Bool`
 
 Clears the flag of the given color if one exists. An "All" argument is supported and clears all flags.
 
-### ClearTranscription()
+### ClearTranscription(clearNestedClipTranscription=False)
+
+> ⚠️ Change at 21.1.0
+
 
 Return Type: `Bool`
 
 Clears audio transcription of the MediaPoolItem. Returns True if successful; False otherwise.
+
+The optional argument clearNestedClipTranscription (Bool) clears the transcription of nested clips instead.
 
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
 
@@ -347,13 +352,18 @@ Return Type: `Bool`
 Sets the given metadata to metadataValue (string).
 Returns True if successful.
 
-### TranscribeAudio(useSpeakerDetection=None)
+### TranscribeAudio(useSpeakerDetection=None, transcribeAsNestedClip=False)
+
+> ⚠️ Change at 21.1.0
+
 
 Return Type: `Bool`
 
 Transcribes audio of the MediaPoolItem. Returns True if successful; False otherwise
 
 Accepts an optional boolean argument to use speaker detection when transcribing. If no argument is specified, use the project's setting.
+
+The optional argument transcribeAsNestedClip (Bool) transcribes the audio as a nested clip transcription, which [GetTranscription](#gettranscriptionusenestedcliptranscriptionfalse) returns when useNestedClipTranscription is True.
 
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
 

@@ -205,7 +205,7 @@ Return Type: `String`
 
 Returns product version in "major.minor.patch[suffix].build" format.
 
-### ImportBurnInPreset
+### ImportBurnInPreset(presetPath)
 Return Type: `Bool`
 
 Import a data burn in preset from a given presetPath (string)

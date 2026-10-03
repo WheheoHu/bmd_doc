@@ -72,6 +72,12 @@ For more information on the latest version of the Update, see the [release notes
 - CreateTimelineFromClips(name, [clips]) and CreateTimelineFromClips(name, clip1, clip2,...) - deprecated calling conventions
 - ImportMedia([items...]) - deprecated calling convention, use ImportMedia([\{clipInfo\}])
 
+## Folder
+
+### Changes
+
+- TranscribeAudio(useSpeakerDetection=None) -> TranscribeAudio(useSpeakerDetection=None, transcribeAsNestedClip=False)
+
 ## MediaPoolItem
 
 ### New
@@ -81,6 +87,8 @@ For more information on the latest version of the Update, see the [release notes
 
 ### Changes
 
+- TranscribeAudio(useSpeakerDetection=None) -> TranscribeAudio(useSpeakerDetection=None, transcribeAsNestedClip=False)
+- ClearTranscription() -> ClearTranscription(clearNestedClipTranscription=False)
 - SetMetadata(metadataType, metadataValue) and SetThirdPartyMetadata(metadataType, metadataValue) - deprecated calling conventions
 - GetMetadata(metadataType=None) and GetClipProperty(propertyName=None) - passing an argument is a deprecated calling convention
 
