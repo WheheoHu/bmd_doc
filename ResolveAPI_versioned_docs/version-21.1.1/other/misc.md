@@ -1,5 +1,7 @@
-# Deprecated API
-
+---
+title: Deprecated API
+displayed_sidebar: apiSidebar
+---
 ## Deprecated Resolve API Functions
 
 The following API functions are deprecated.
@@ -77,7 +79,7 @@ AddItemListToMediaPool(item1, item2, ...)       --> [clips...]         # Adds sp
 AddItemListToMediaPool([items...])              --> [clips...]         # Adds specified file/folder paths from Media Storage into current Media Pool folder. Returns a list of the MediaPoolItems created.
 ```
 
-Use [`MediaStorage:AddItemListToMediaPool`](./api/MediaStorage.md#additemlisttomediapooliteminfo-) with a list of MediaStorageItemInfo dicts instead, where each MediaStorageItemInfo is a dict of `"media"` (string), `"startFrame"` (int) and `"endFrame"` (int).
+Use [`MediaStorage:AddItemListToMediaPool`](../resolve_api/MediaStorage.md#additemlisttomediapooliteminfo-) with a list of MediaStorageItemInfo dicts instead, where each MediaStorageItemInfo is a dict of `"media"` (string), `"startFrame"` (int) and `"endFrame"` (int).
 
 For simple paths: `AddItemListToMediaPool([{"media": p} for p in paths])`
 
@@ -88,7 +90,7 @@ AppendToTimeline(clip1, clip2, ...)             --> [TimelineItem]     # Appends
 AppendToTimeline([clips])                       --> [TimelineItem]     # Appends specified MediaPoolItem objects in the current timeline. Returns the list of appended timelineItems.
 ```
 
-Use [`MediaPool:AppendToTimeline`](./api/MediaPool.md#appendtotimelineclipinfo-) with a list of AppendClipInfo dicts instead, where each AppendClipInfo is a dict of `"mediaPoolItem"`, `"startFrame"` (float/int), `"endFrame"` (float/int), optionally `"mediaType"` (int; 1 - Video only, 2 - Audio only), `"trackIndex"` (int) and `"recordFrame"` (float/int).
+Use [`MediaPool:AppendToTimeline`](../resolve_api/MediaPool.md#appendtotimelineclipinfo-) with a list of AppendClipInfo dicts instead, where each AppendClipInfo is a dict of `"mediaPoolItem"`, `"startFrame"` (float/int), `"endFrame"` (float/int), optionally `"mediaType"` (int; 1 - Video only, 2 - Audio only), `"trackIndex"` (int) and `"recordFrame"` (float/int).
 
 For simple appends: `AppendToTimeline([{"mediaPoolItem": c} for c in clips])`
 
@@ -97,7 +99,7 @@ CreateTimelineFromClips(name, clip1, clip2,...) --> Timeline           # Creates
 CreateTimelineFromClips(name, [clips])          --> Timeline           # Creates new timeline with specified name, and appends the specified MediaPoolItem objects.
 ```
 
-Use [`MediaPool:CreateTimelineFromClips`](./api/MediaPool.md#createtimelinefromclipsname-clipinfo) with a list of clipInfo dicts instead, where each clipInfo is a dict of `"mediaPoolItem"`, `"startFrame"` (float/int), `"endFrame"` (float/int) and `"recordFrame"` (float/int).
+Use [`MediaPool:CreateTimelineFromClips`](../resolve_api/MediaPool.md#createtimelinefromclipsname-clipinfo) with a list of clipInfo dicts instead, where each clipInfo is a dict of `"mediaPoolItem"`, `"startFrame"` (float/int), `"endFrame"` (float/int) and `"recordFrame"` (float/int).
 
 For simple creation: `CreateTimelineFromClips(name, [{"mediaPoolItem": c} for c in clips])`
 
@@ -105,7 +107,7 @@ For simple creation: `CreateTimelineFromClips(name, [{"mediaPoolItem": c} for c 
 ImportMedia([items...])                         --> [MediaPoolItems]   # Imports specified file/folder paths into current Media Pool folder. Input is an array of file/folder paths. Returns a list of the MediaPoolItems created.
 ```
 
-Use [`MediaPool:ImportMedia`](./api/MediaPool.md#importmediaclipinfo) with a list of clipInfo dicts instead, where each clipInfo is a dict of `"FilePath"` (string), `"StartIndex"` (int) and `"EndIndex"` (int).
+Use [`MediaPool:ImportMedia`](../resolve_api/MediaPool.md#importmediaclipinfo) with a list of clipInfo dicts instead, where each clipInfo is a dict of `"FilePath"` (string), `"StartIndex"` (int) and `"EndIndex"` (int).
 
 For simple imports: `ImportMedia([{"FilePath": p} for p in paths])`
 
@@ -115,25 +117,25 @@ MediaPoolItem
 SetMetadata(metadataType, metadataValue)        --> Bool               # Sets the given metadata to metadataValue (string). Returns True if successful.
 ```
 
-Use [`MediaPoolItem:SetMetadata`](./api/MediaPoolItem.md#setmetadatametadata) with a dict instead. For single keys: `SetMetadata({"Scene": "42"})`
+Use [`MediaPoolItem:SetMetadata`](../resolve_api/MediaPoolItem.md#setmetadatametadata) with a dict instead. For single keys: `SetMetadata({"Scene": "42"})`
 
 ```text
 SetThirdPartyMetadata(metadataType, metadataValue) --> Bool            # Sets/Add the given third party metadata to metadataValue (string). Returns True if successful.
 ```
 
-Use [`MediaPoolItem:SetThirdPartyMetadata`](./api/MediaPoolItem.md#setthirdpartymetadatametadata) with a dict instead. For single keys: `SetThirdPartyMetadata({"key": "value"})`
+Use [`MediaPoolItem:SetThirdPartyMetadata`](../resolve_api/MediaPoolItem.md#setthirdpartymetadatametadata) with a dict instead. For single keys: `SetThirdPartyMetadata({"key": "value"})`
 
 ```text
 GetMetadata(metadataType)                       --> string             # Returns the metadata value for the key 'metadataType'.
 ```
 
-Use [`MediaPoolItem:GetMetadata`](./api/MediaPoolItem.md#getmetadatametadatatypenone) with no argument instead, which returns a dict of all set metadata properties, and index into the result.
+Use [`MediaPoolItem:GetMetadata`](../resolve_api/MediaPoolItem.md#getmetadatametadatatypenone) with no argument instead, which returns a dict of all set metadata properties, and index into the result.
 
 ```text
 GetClipProperty(propertyName)                   --> string             # Returns the property value for the key 'propertyName'.
 ```
 
-Use [`MediaPoolItem:GetClipProperty`](./api/MediaPoolItem.md#getclippropertypropertynamenone) with no argument instead, which returns a dict of all clip properties, and index into the result.
+Use [`MediaPoolItem:GetClipProperty`](../resolve_api/MediaPoolItem.md#getclippropertypropertynamenone) with no argument instead, which returns a dict of all clip properties, and index into the result.
 
 Project and Timeline
 
@@ -144,17 +146,20 @@ Timeline.GetSetting(settingName)                --> string             # Returns
 Timeline.GetSetting()                           --> {settings}         # Returns a dict of all timeline settings.
 ```
 
-Use [`Project:GetSettings`](./api/Project.md#getsettings) or [`Timeline:GetSettings`](./api/Timeline.md#getsettings) instead, which return a dict of all settings, and index into the result.
+Use [`Project:GetSettings`](../resolve_api/Project.md#getsettings) or [`Timeline:GetSettings`](../resolve_api/Timeline.md#getsettings) instead, which return a dict of all settings, and index into the result.
 
 ```text
 Project.SetSetting(settingName, settingValue)   --> Bool               # Sets the project setting (indicated by settingName, string) to the value (settingValue, string).
 Timeline.SetSetting(settingName, settingValue)  --> Bool               # Sets the timeline setting (indicated by settingName, string) to the value (settingValue, string).
 ```
 
-Use [`Project:SetSettings`](./api/Project.md#setsettingssettings) or [`Timeline:SetSettings`](./api/Timeline.md#setsettingssettings) instead. For single keys: `SetSettings({"timelineFrameRate": "24"})`.
+Use [`Project:SetSettings`](../resolve_api/Project.md#setsettingssettings) or [`Timeline:SetSettings`](../resolve_api/Timeline.md#setsettingssettings) instead. For single keys: `SetSettings({"timelineFrameRate": "24"})`.
 
-> The 4-argument form `SetSetting('superScale', 2, sharpnessValue, noiseReductionValue)`, used to select the Super Scale multiplier "2x Enhanced", is **not** deprecated — it has no `SetSettings` equivalent. See [Project and Clip Properties](./settings/ProjectAndClipProperties.md#specifically-enumerated-values).
+:::note
 
+The 4-argument form `SetSetting('superScale', 2, sharpnessValue, noiseReductionValue)`, used to select the Super Scale multiplier "2x Enhanced", is **not** deprecated — it has no `SetSettings` equivalent. See [Project and Clip Properties](../resolve_settings/ProjectAndClipProperties.md#specifically-enumerated-values).
+
+:::
 
 TimelineItem
 
@@ -163,14 +168,14 @@ GetProperty(propertyKey)                        --> float/Bool         # Returns
 GetProperty()                                   --> {properties}       # Returns a dict of all supported properties.
 ```
 
-Use [`TimelineItem:GetProperties`](./api/TimelineItem.md#getproperties) instead, which returns a dict of all supported properties, and index into the result.
+Use [`TimelineItem:GetProperties`](../resolve_api/TimelineItem.md#getproperties) instead, which returns a dict of all supported properties, and index into the result.
 
 ```text
 SetProperty(propertyKey, propertyValue)         --> Bool               # Sets the value of property 'propertyKey' to value 'propertyValue'.
 SetProperty({properties})                       --> Bool               # Sets the values of the properties in the given dict.
 ```
 
-Use [`TimelineItem:SetProperties`](./api/TimelineItem.md#setpropertiesproperties) instead. For single keys: `SetProperties({"ZoomX": 2.0})`
+Use [`TimelineItem:SetProperties`](../resolve_api/TimelineItem.md#setpropertiesproperties) instead. For single keys: `SetProperties({"ZoomX": 2.0})`
 
 ## Unsupported Resolve API Functions
 
@@ -186,10 +191,3 @@ GetRenderJobStatus(idx)                         --> {status info}      # Please 
 GetSetting and SetSetting                       --> {}                 # settingName videoMonitorUseRec601For422SDI is now replaced with videoMonitorUseMatrixOverrideFor422SDI and videoMonitorMatrixOverrideFor422SDI.
                                                                        # settingName perfProxyMediaOn is now replaced with perfProxyMediaMode which takes values 0 - disabled, 1 - when available, 2 - when source not available.
 ```
-
-
-## Moved methods
-
-- `Timeline.ApplyGradeFromDRX(path, gradeMode, [items])` → moved to [Graph](./api/Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
-- `Timeline.ApplyGradeFromDRX(path, gradeMode, item1, item2, ...)` → moved to [Graph](./api/Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
-- `TimelineItem.ApplyArriCdlLut()` → moved to [Graph](./api/Graph.md#applyarricdllut) since 19.1.0

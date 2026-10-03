@@ -5,6 +5,35 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.1.1 update
+
+## Project
+
+### New
+
+- GetRenderWithQuickExportStatus()
+- GetTranscribeAudioStatus()
+- GetAnalyzeForSlateStatus()
+- GetSmartReframeStatus()
+- GetDetectSceneCutsStatus()
+- GetCreateSubtitlesFromAudioStatus()
+
+### Changes
+
+- RenderWithQuickExport(preset_name, \{param_dict\}) - the returned status dict adds EstimatedTimeRemainingInMs and the "Rendering", "Upload Pending", "Uploading", "Inactive" and "Unexpected" job statuses
+
+## Graph
+
+### Changes
+
+- ApplyGradeFromDRX(path, gradeMode) -> ApplyGradeFromDRX(path, gradeMode, applyToAllLayers=False)
+
+## Settings and Properties
+
+### New
+
+- Job Status
+
 # Resolve 21.1.0 update
 
 ## Resolve

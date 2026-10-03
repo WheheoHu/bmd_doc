@@ -2,7 +2,10 @@
 
 > New in 19.1.0
 
-### ApplyGradeFromDRX(path, gradeMode)
+### ApplyGradeFromDRX(path, gradeMode, applyToAllLayers=False)
+
+> ⚠️ Change at 21.1.1
+
 
 Return Type: `Bool`
 
@@ -11,6 +14,8 @@ Loads a still from given file `path` (`string`) and applies grade to graph with 
 - 0 - “No keyframes”
 - 1 - “Source Timecode aligned”
 - 2 - “Start Frames aligned”.
+
+If the optional argument `applyToAllLayers` (`Bool`) is True, the grade is applied to all node-stack layers instead of just the active layer.
 
 ### ApplyArriCdlLut()
 

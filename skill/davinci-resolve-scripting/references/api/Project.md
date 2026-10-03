@@ -1,5 +1,51 @@
 # Project
 
+> New in 21.1.1
+
+### GetRenderWithQuickExportStatus()
+Return Type: `{quickExportStatus}`
+
+Returns progress information for the active [RenderWithQuickExport](#renderwithquickexportpreset_name-param_dict) operation.
+
+Refer to [Job Status](../settings/JobStatus.md#quick-export-render-status) for the returned keys.
+
+### GetTranscribeAudioStatus()
+Return Type: `{transcribeAudioStatus}`
+
+Returns a dict with job status and completion percentage of the active TranscribeAudio operation, started via [Folder.TranscribeAudio](./Folder.md#transcribeaudiousespeakerdetectionnone-transcribeasnestedclipfalse) or [MediaPoolItem.TranscribeAudio](./MediaPoolItem.md#transcribeaudiousespeakerdetectionnone-transcribeasnestedclipfalse).
+
+Refer to [Job Status](../settings/JobStatus.md#transcribe-audio-status) for the returned keys.
+
+### GetAnalyzeForSlateStatus()
+Return Type: `{slateAnalysisStatus}`
+
+Returns a dict with job status and completion percentage of the active AnalyzeForSlate operation, started via [Folder.AnalyzeForSlate](./Folder.md#analyzeforslatemarkercolor) or [MediaPoolItem.AnalyzeForSlate](./MediaPoolItem.md#analyzeforslatemarkercolor).
+
+Refer to [Job Status](../settings/JobStatus.md#slate-analysis-status) for the returned keys.
+
+### GetSmartReframeStatus()
+Return Type: `{smartReframeStatus}`
+
+Returns a dict with job status and completion percentage of the active SmartReframe operation, started via [TimelineItem.SmartReframe](./TimelineItem.md#smartreframe).
+
+Refer to [Job Status](../settings/JobStatus.md#smart-reframe-status) for the returned keys.
+
+### GetDetectSceneCutsStatus()
+Return Type: `{detectSceneCutsStatus}`
+
+Returns a dict with job status and completion percentage of the active DetectSceneCuts operation, started via [Timeline.DetectSceneCuts](./Timeline.md#detectscenecuts).
+
+Refer to [Job Status](../settings/JobStatus.md#detect-scene-cuts-status) for the returned keys.
+
+### GetCreateSubtitlesFromAudioStatus()
+Return Type: `{createSubtitlesFromAudioStatus}`
+
+Returns a dict with job status and completion percentage of the active CreateSubtitlesFromAudio operation, started via [Timeline.CreateSubtitlesFromAudio](./Timeline.md#createsubtitlesfromaudioautocaptionsettings).
+
+Refer to [Job Status](../settings/JobStatus.md#create-subtitles-from-audio-status) for the returned keys.
+
+---
+
 > New in 21.1.0
 
 ### GetSettings()
@@ -125,6 +171,9 @@ Returns a list of Quick Export render presets by name
 
 ### RenderWithQuickExport(preset_name, {param_dict})
 
+> ⚠️ Change at 21.1.1
+
+
 Return Type: `{status info}`
 
 Starts a quick export render for the current active timeline.
@@ -138,6 +187,8 @@ Starts a quick export render for the current active timeline.
 Returns a dict with job status and time taken to render, or an error string if render has failed or not attempted
 
 Refer to [Render Settings](../settings/RenderSettings.md) section for information on the above supported settings
+
+Refer to [Job Status](../settings/JobStatus.md#quick-export-render-status) for the returned keys. The progress of an active quick export can be read with [GetRenderWithQuickExportStatus](#getrenderwithquickexportstatus).
 
 ---
 

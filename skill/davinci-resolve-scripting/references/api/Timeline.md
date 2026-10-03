@@ -197,7 +197,7 @@ Optional newTrackOptions = {'audioType': same as subTrackType above, 'index': 1 
 
 ### ApplyGradeFromDRX(path, gradeMode, [items])
 
-> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode) since 19.1.0
+> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
 
 
 ~~Return Type: `Bool`~~
@@ -207,7 +207,7 @@ Optional newTrackOptions = {'audioType': same as subTrackType above, 'index': 1 
 
 ### ApplyGradeFromDRX(path, gradeMode, item1, item2, ...)
 
-> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode) since 19.1.0
+> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
 
 ~~Return Type: `Bool`~~
 
@@ -242,6 +242,8 @@ Return Type: `Bool`
 
 Creates subtitles from audio for the timeline. Returns True on success, False otherwise.
 optional dictionary autoCaptionSettings after DR 18.6.4.Check [Auto Caption Settings](../settings/AutoCaptionSettings.md) subsection below for more information.
+
+The progress of an active subtitle creation can be read with [Project.GetCreateSubtitlesFromAudioStatus](./Project.md#getcreatesubtitlesfromaudiostatus).
 
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
 
@@ -281,6 +283,8 @@ Deletes track of trackType ("video", "subtitle", "audio") and given trackIndex. 
 Return Type: `Bool`
 
 Detects and makes scene cuts along the timeline. Returns True if successful, False otherwise.
+
+The progress of an active scene cut detection can be read with [Project.GetDetectSceneCutsStatus](./Project.md#getdetectscenecutsstatus).
 
 ### DuplicateTimeline(timelineName)
 

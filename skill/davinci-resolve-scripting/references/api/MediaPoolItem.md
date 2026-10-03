@@ -75,6 +75,8 @@ Performs Slate analysis on the MediaPoolItem using the current settings and spec
 
 Refer to [Analyze Slate Settings](../settings/AnalyzeSlateSettings.md) for information on markerColor.
 
+The progress of an active slate analysis can be read with [Project.GetAnalyzeForSlateStatus](./Project.md#getanalyzeforslatestatus).
+
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
 
 ---
@@ -364,6 +366,8 @@ Transcribes audio of the MediaPoolItem. Returns True if successful; False otherw
 Accepts an optional boolean argument to use speaker detection when transcribing. If no argument is specified, use the project's setting.
 
 The optional argument transcribeAsNestedClip (Bool) transcribes the audio as a nested clip transcription, which [GetTranscription](#gettranscriptionusenestedcliptranscriptionfalse) returns when useNestedClipTranscription is True.
+
+The progress of an active transcription can be read with [Project.GetTranscribeAudioStatus](./Project.md#gettranscribeaudiostatus).
 
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
 

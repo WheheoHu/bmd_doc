@@ -299,7 +299,7 @@ Adds a new color version for a video clip based on versionType (0 - local, 1 - r
 
 ### ApplyArriCdlLut()
 
-> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode) since 19.1.0
+> ❗ Move to [Graph](./Graph.md#applyarricdllut) since 19.1.0
 
 
 ~~Return Type: `Bool`~~
@@ -696,6 +696,8 @@ Sets the value of property "propertyKey" to value "propertyValue".Refer to "Look
 Return Type: `Bool`
 
 Performs Smart Reframe. Returns True if successful, False otherwise.
+
+The progress of an active Smart Reframe can be read with [Project.GetSmartReframeStatus](./Project.md#getsmartreframestatus).
 
 Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
 
