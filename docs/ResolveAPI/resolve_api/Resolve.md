@@ -1,6 +1,19 @@
 ---
 displayed_sidebar: apiSidebar
 ---
+> New in 21.1.2
+
+### GetEffectsList(mediaType)
+Return Type: `[{effectInfo}...]`
+
+Returns all available effects that can be applied to a timeline item, as a list of effect info dicts. The optional argument mediaType (string) restricts the list to effects applicable to that media type: "video" (default), "photo" or "audio".
+
+The returned category and id are used by [TimelineItem.AddEffect](./TimelineItem.md#addeffectcategory-id) and [PhotoAlbumItem.AddEffect](./PhotoAlbumItem.md#addeffectcategory-id).
+
+Refer to [Effect Info](../resolve_settings/EffectInfo.md) for the returned keys.
+
+------
+
 > New in 21.1.0
 
 ### GetCurrentProject()
@@ -140,14 +153,32 @@ Returns a list of Fairlight presets by name.
 > New in 19.0.0
 
 ### GetKeyframeMode()
+
+:::warning
+
+Change at 21.1.2
+
+:::
+
 Return Type: `keyframeMode`
 
 Returns the currently set keyframe mode (int). Refer to section [Keyframe Mode information](../resolve_settings/KeyframeModeInformation.md) for details.
 
+Works from any page since 21.1.2 (previously the Color page only).
+
 ### SetKeyframeMode(keyframeMode)
+
+:::warning
+
+Change at 21.1.2
+
+:::
+
 Return Type: `Bool`
 
 Returns True when 'keyframeMode'(enum) is successfully set. Refer to section [Keyframe Mode information](../resolve_settings/KeyframeModeInformation.md) below for details.
+
+Works from any page since 21.1.2 (previously the Color page only).
 
 ------
 

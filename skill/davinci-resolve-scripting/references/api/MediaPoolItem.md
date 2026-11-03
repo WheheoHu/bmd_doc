@@ -1,5 +1,37 @@
 # MediaPoolItem
 
+> New in 21.1.2
+
+### SetTranscription({transcription})
+Return Type: `Bool`
+
+Replaces the transcription of the MediaPoolItem with the given transcription dict, as returned by [GetTranscription](#gettranscriptionusenestedcliptranscriptionfalse). For a timeline clip the transcription is set as a nested clip.
+
+Use [ClearTranscription](#cleartranscriptionclearnestedcliptranscriptionfalse) to remove a transcription instead.
+
+Refer to [Transcription](../settings/Transcription.md#setting-a-transcription) for the requirements on the transcription dict.
+
+Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md) for prerequisites.
+
+### ExportFrame(frameOffset, [{exportFrameOptions}])
+Return Type: `{exportFrameResult}`
+
+Exports the frame at frameOffset (int, 0-based offset from the item start) as a still image, to a file or as an encoded string, per exportFrameOptions.
+
+Refer to [Export Frame Options](../settings/ExportFrameOptions.md) for information on supported settings and the returned keys.
+
+### GetParentFolder()
+Return Type: `Folder`
+
+Returns the [Folder](./Folder.md) object containing this MediaPoolItem.
+
+### GetPhotoAlbum()
+Return Type: `PhotoAlbum`
+
+Returns the [PhotoAlbum](./PhotoAlbum.md) object if the MediaPoolItem is a photo album clip, None otherwise.
+
+---
+
 > New in 21.1.0
 
 ### GetTranscription(useNestedClipTranscription=False)
@@ -72,6 +104,8 @@ Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md)
 Return Type: `Bool`
 
 Performs Slate analysis on the MediaPoolItem using the current settings and specified markerColor. Returns True if required packages are installed and analysis is successful.
+
+Adds a "Detected Slate" duration marker in markerColor over the frames of each slate found. The text written on the slate is not read: use [GetMarkers()](#getmarkers) to locate the slate, the marker carries no transcription of its contents.
 
 Refer to [Analyze Slate Settings](../settings/AnalyzeSlateSettings.md) for information on markerColor.
 

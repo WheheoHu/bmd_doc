@@ -5,6 +5,166 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.1.2 update
+
+## Resolve
+
+### New
+
+- GetEffectsList(mediaType)
+
+### Changes
+
+- GetKeyframeMode() / SetKeyframeMode(keyframeMode) - now work from any page, not only the Color page
+
+## ProjectManager
+
+### Changes
+
+- ArchiveProject - fixed issues
+
+## Project
+
+### New
+
+- GetPhotoAlbumCount()
+- GetPhotoAlbumByIndex(idx)
+- GetCurrentPhotoAlbum()
+- SetCurrentPhotoAlbum(photoAlbum)
+- GetPhotoQuickExportRenderPresets()
+- SetPhotoRenderSettings(\{settings\})
+- RenderPhotosWithQuickExport(quickExportPresetName, \{presetInfo\})
+
+### Changes
+
+- RenderWithQuickExport - fixed issues
+- GenerateSpeech(\{speechGenerationSettings\}, timecode) - documents that it returns None without the AI Speech Generator Extra, and generates into the current project and timeline
+
+## MediaPool
+
+### New
+
+- CreateEmptyPhotoAlbum(name)
+- CreatePhotoAlbumFromPhotos(name, [photos])
+- DeletePhotoAlbums([photoAlbums])
+- AddToPhotoAlbum([photos])
+
+### Changes
+
+- CreateEmptyTimeline(name) -> CreateEmptyTimeline(name, timecode); returns None if the name is empty, already used or invalid
+- AddSubFolder(folder, name) - documents that duplicate names are accepted and that it returns None on failure
+- AppendToTimeline - no longer crashes with frame ranges for OGraf and Lottie clips
+
+## Folder
+
+### New
+
+- GetParentFolder()
+
+### Changes
+
+- AnalyzeForSlate(markerColor) - documents the "Detected Slate" marker it adds
+
+## MediaPoolItem
+
+### New
+
+- SetTranscription(\{transcription\})
+- ExportFrame(frameOffset, [\{exportFrameOptions\}])
+- GetParentFolder()
+- GetPhotoAlbum()
+
+### Changes
+
+- AnalyzeForSlate(markerColor) - documents the "Detected Slate" marker it adds
+
+## Timeline
+
+### New
+
+- GetIsEnabled()
+- SetIsEnabled(enabled)
+- DeleteGaps()
+- MoveItems([timelineItems], \{position\}, moveLinkedItems=True, subframePrecision=False)
+- ExportFrame(frameOffset, [\{exportFrameOptions\}])
+
+## TimelineItem
+
+### New
+
+- GetPosition(subframePrecision=False)
+- SetPosition(\{position\}, moveLinkedItems=True, subframePrecision=False)
+- SetLeftOffset(offset, subframePrecision=False, updateLinkedItems=True)
+- SetRightOffset(offset, subframePrecision=False, updateLinkedItems=True)
+- AddEffect(category, id)
+- GetEffects(category)
+- DeleteEffects([effects])
+- CopyAttributes([targetItems], \{copyAttributesOptions\})
+- RippleDeleteSilence([\{removeSilenceOptions\}])
+- AnalyzeAudioLevels(standard)
+- ExportFrame(frameOffset, [\{exportFrameOptions\}])
+
+### Changes
+
+- SmartReframe() - documents that it does not crop or rescale, so "timelineInputResMismatchBehavior" should be set to "scaleToCrop" first
+
+## ColorGroup
+
+### New
+
+- GetPhotosInPhotoAlbum(photoAlbum)
+
+## Graph
+
+### New
+
+- SetNodeLabel(nodeIndex, label)
+- GetNodeColor(nodeIndex)
+- SetNodeColor(nodeIndex, colorName)
+
+### Changes
+
+- ApplyGradeFromDRX(path, gradeMode, applyToAllLayers=False) -> ApplyGradeFromDRX(path, gradeMode, applyToAllLayers=False, keyframeMode=resolve.KEYFRAME_MODE_ALL); documents that the Graph object is invalid after a successful call
+
+## PhotoAlbum
+
+### New
+
+- New object: GetName(), SetName(photoAlbumName), GetUniqueId(), GetPhotoList(), GetCurrentItem(), DeletePhotos([photoAlbumItems]), GetNodeGraph(), GetMediaPoolItem(), GrabStill(), GrabAllStills()
+
+## PhotoAlbumItem
+
+### New
+
+- New object, similar to TimelineItem: name, unique ID, Get/SetProperties, Fusion compositions, flags, clip color, CopyGrades, color versions, SetCDL, GetNodeGraph, ResetAllNodeColors, ExportLUT, color groups, LoadBurnInPreset, Get/SetRatings, AddEffect/GetEffects/DeleteEffects and ExportFrame
+
+## Effect
+
+### New
+
+- New object: GetInfo(), GetIsEnabled(), SetIsEnabled(enabled), GetFusionComp(), GetIndex(), SetIndex(index)
+
+## Settings and Properties
+
+### New
+
+- Photo Album Item Properties
+- Photo Render Settings
+- Copy Attributes Options
+- Remove Silence Options
+- Export Frame Options
+- Timeline Item Position
+- Audio Levels Info
+- Effect Info
+
+### Changes
+
+- Auto Caption Settings: added SUBTITLE_EXTENDED_LANGUAGE_SUPPORT and now lists all 61 languages
+- Project and Clip Properties: added transcriptionExtendedLanguageSupport
+- Timeline Item Properties: added TransitionType, TransitionCategory, TransitionDuration and TransitionAlignment
+- Transcription: added the Setting a transcription section
+- Studio and AI Scripting APIs: AnalyzeForSlate now requires AI IntelliSearch - Faster instead of AI Slate ID
+
 # Resolve 21.1.1 update
 
 ## Project

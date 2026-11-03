@@ -1,6 +1,30 @@
 ---
 displayed_sidebar: apiSidebar
 ---
+> New in 21.1.2
+
+### CreateEmptyPhotoAlbum(name)
+Return Type: `PhotoAlbum`
+
+Adds new [PhotoAlbum](./PhotoAlbum.md) with given name.
+
+### CreatePhotoAlbumFromPhotos(name, [photos])
+Return Type: `PhotoAlbum`
+
+Creates new [PhotoAlbum](./PhotoAlbum.md) with specified name, and adds the specified still image [MediaPoolItem](./MediaPoolItem.md) list to it.
+
+### DeletePhotoAlbums([photoAlbums])
+Return Type: `Bool`
+
+Deletes the specified [PhotoAlbum](./PhotoAlbum.md) list in the media pool.
+
+### AddToPhotoAlbum([photos])
+Return Type: `[PhotoAlbumItem]`
+
+Adds the specified still image [MediaPoolItem](./MediaPoolItem.md) list to the current photo album. Returns the list of added [PhotoAlbumItem](./PhotoAlbumItem.md)s.
+
+-----
+
 > New in 21.1.0
 
 ### CreateMulticamClip([clips], \{multicamOptions\})
@@ -41,7 +65,9 @@ Sets the selected MediaPoolItem to the given MediaPoolItem
 ### AddSubFolder(folder, name)                      
 Return Type: `Folder`
 
-Adds new subfolder under specified [Folder](./Folder.md)  object with the given name.
+Adds new subfolder under specified [Folder](./Folder.md)  object with the given name. Returns None if the subfolder could not be added.
+
+A name already used by another subfolder is accepted and adds a second subfolder with that name, so check [Folder.GetSubFolderList()](./Folder.md#getsubfolderlist) first when the call is meant to be idempotent.
 
 ### AppendToTimeline([\{clipInfo\}, ...])             
 Return Type: `[TimelineItem]`
@@ -75,10 +101,19 @@ Return Type: `[TimelineItem]`
 Appends specified [MediaPoolItem](./MediaPoolItem.md)  objects in the current timeline. 
 Returns the list of appended [TimelineItem](./TimelineItem.md) .
 
-### CreateEmptyTimeline(name)                       
+### CreateEmptyTimeline(name, timecode)
+
+:::warning
+
+Change at 21.1.2
+
+:::
+
 Return Type: `Timeline`
 
-Adds new [Timeline](./Timeline.md)  with given name.
+Adds new [Timeline](./Timeline.md) with given name. The optional timecode (string) sets the start timecode of the new timeline.
+
+Returns None if the timeline could not be created, which includes the name being empty, already used by another timeline, or containing characters that are not valid in a timeline name. Delete or rename the existing timeline before reusing its name.
 
 ### CreateStereoClip(LeftMediaPoolItem,RightMediaPoolItem)
 Return Type: `MediaPoolItem`

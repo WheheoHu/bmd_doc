@@ -245,3 +245,17 @@ resolve.DIALOGUE_LEVELER_MODE_OPTIMIZE_MODERATE_LEVELS
 resolve.DIALOGUE_LEVELER_MODE_MORE_LIFT_FOR_LOW_LEVELS
 resolve.DIALOGUE_LEVELER_MODE_LIFT_SOFT_WHISPERY_SOURCES
 ```
+
+## Transition
+
+> New in 21.1.2
+
+These keys apply to transition items (items whose [`TimelineItem:GetType`](../resolve_api/TimelineItem.md#gettype) is "transition").
+
+`TransitionType`: string (read only, transition type name, example: "Cross Dissolve")
+
+`TransitionCategory`: string (read only. Options: "simple", "fusion", "ofx", "audio")
+
+`TransitionDuration`: int (transition duration in frames)
+
+`TransitionAlignment`: string (options: "left", "center", "right")

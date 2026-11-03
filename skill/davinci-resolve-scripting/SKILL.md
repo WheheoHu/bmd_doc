@@ -6,8 +6,8 @@ description: Use when writing, editing, or debugging DaVinci Resolve scripting A
 # DaVinci Resolve Scripting API
 
 Accurate reference for the DaVinci Resolve scripting API, generated from the versioned
-docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.1.1** (docs last
-updated 31 Aug 2026). Use these files instead of guessing method names — the Resolve
+docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.1.2** (docs last
+updated 22 Oct 2026). Use these files instead of guessing method names — the Resolve
 API is easy to hallucinate.
 
 ## Getting started
@@ -39,6 +39,7 @@ headless mode, and the object hierarchy, read:
 ### API Objects
 
 - [ColorGroup](references/api/ColorGroup.md)
+- [Effect](references/api/Effect.md)
 - [Folder](references/api/Folder.md)
 - [Gallery](references/api/Gallery.md)
 - [GalleryStillAlbum](references/api/GalleryStillAlbum.md)
@@ -46,6 +47,8 @@ headless mode, and the object hierarchy, read:
 - [MediaPool](references/api/MediaPool.md)
 - [MediaPoolItem](references/api/MediaPoolItem.md)
 - [MediaStorage](references/api/MediaStorage.md)
+- [PhotoAlbum](references/api/PhotoAlbum.md)
+- [PhotoAlbumItem](references/api/PhotoAlbumItem.md)
 - [Project](references/api/Project.md)
 - [ProjectManager](references/api/ProjectManager.md)
 - [Resolve](references/api/Resolve.md)
@@ -55,6 +58,7 @@ headless mode, and the object hierarchy, read:
 ### Settings & Constants
 
 - [Analyze Slate Settings](references/settings/AnalyzeSlateSettings.md)
+- [Audio Levels Info](references/settings/AudioLevelsInfo.md)
 - [Audio Mapping](references/settings/AudioMapping.md)
 - [Audio Sync Settings](references/settings/AudioSyncSettings.md)
 - [Auto Align Options](references/settings/AutoAlignOptions.md)
@@ -62,7 +66,10 @@ headless mode, and the object hierarchy, read:
 - [Cache Mode Information](references/settings/CacheModeInformation.md)
 - [Clone Tool Settings](references/settings/CloneToolSettings.md)
 - [Cloud Projects Settings](references/settings/CloudProjectsSettings.md)
+- [Copy Attributes Options](references/settings/CopyAttributesOptions.md)
+- [Effect Info](references/settings/EffectInfo.md)
 - [Encrypt DCTL Options](references/settings/EncryptDCTLOptions.md)
+- [Export Frame Options](references/settings/ExportFrameOptions.md)
 - [Export LUT](references/settings/ExportLUT.md)
 - [Fade Info](references/settings/FadeInfo.md)
 - [Job Status](references/settings/JobStatus.md)
@@ -71,15 +78,19 @@ headless mode, and the object hierarchy, read:
 - [Multicam Options](references/settings/MulticamOptions.md)
 - [Normalize Audio Options](references/settings/NormalizeAudioOptions.md)
 - [Output Blanking](references/settings/OutputBlanking.md)
+- [Photo Album Item Properties](references/settings/PhotoAlbumItemProperties.md)
+- [Photo Render Settings](references/settings/PhotoRenderSettings.md)
 - [Project and Clip Properties](references/settings/ProjectAndClipProperties.md)
 - [Project Attributes](references/settings/ProjectAttributes.md)
 - [Project Settings Preset Info](references/settings/ProjectSettingsPresetInfo.md)
+- [Remove Silence Options](references/settings/RemoveSilenceOptions.md)
 - [Render Settings](references/settings/RenderSettings.md)
 - [Smart Switch Settings](references/settings/SmartSwitchSettings.md)
 - [Speech Generation Settings](references/settings/SpeechGenerationSettings.md)
 - [Speed Options](references/settings/SpeedOptions.md)
 - [Studio and AI Scripting APIs](references/settings/StudioAndAIScriptingAPIs.md)
 - [Timeline Export Properties](references/settings/TimelineExportProperties.md)
+- [Timeline Item Position](references/settings/TimelineItemPosition.md)
 - [Timeline Item Properties](references/settings/TimelineItemProperties.md)
 - [Transcription](references/settings/Transcription.md)
 - [Transition Options](references/settings/TransitionOptions.md)

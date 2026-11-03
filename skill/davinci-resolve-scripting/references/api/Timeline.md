@@ -1,5 +1,40 @@
 # Timeline
 
+> New in 21.1.2
+
+### GetIsEnabled()
+Return Type: `Bool`
+
+Returns True if the timeline is enabled.
+
+### SetIsEnabled(enabled)
+Return Type: `Bool`
+
+Enables/disables the timeline according to enabled (Bool). Returns True if successful.
+
+### DeleteGaps()
+Return Type: `Bool`
+
+Deletes all gaps between clips on the timeline, rippling content to close the gaps.
+
+### MoveItems([timelineItems], {position}, moveLinkedItems=True, subframePrecision=False)
+Return Type: `Bool`
+
+Moves the leftmost [TimelineItem](./TimelineItem.md) of timelineItems (the lowest track on ties) to the given position, and the other items relative to it. Fails if any item cannot reach its destination.
+
+If moveLinkedItems (Bool) is True, linked items are moved too. If subframePrecision (Bool) is True, fractional startFrame values are allowed for audio clips when the 'Align audio edits to frame boundaries' preference is off. Otherwise, the position is aligned to whole frames.
+
+Refer to [Timeline Item Position](../settings/TimelineItemPosition.md) for the supported keys.
+
+### ExportFrame(frameOffset, [{exportFrameOptions}])
+Return Type: `{exportFrameResult}`
+
+Exports the frame at frameOffset (int, 0-based offset from the timeline start) as a still image, to a file or as an encoded string, per exportFrameOptions.
+
+Refer to [Export Frame Options](../settings/ExportFrameOptions.md) for information on supported settings and the returned keys.
+
+---
+
 > New in 21.1.0
 
 ### GetSettings()
@@ -197,7 +232,7 @@ Optional newTrackOptions = {'audioType': same as subTrackType above, 'index': 1 
 
 ### ApplyGradeFromDRX(path, gradeMode, [items])
 
-> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
+> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse-keyframemoderesolvekeyframe_mode_all) since 19.1.0
 
 
 ~~Return Type: `Bool`~~
@@ -207,7 +242,7 @@ Optional newTrackOptions = {'audioType': same as subTrackType above, 'index': 1 
 
 ### ApplyGradeFromDRX(path, gradeMode, item1, item2, ...)
 
-> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
+> ❗ Move to [Graph](./Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse-keyframemoderesolvekeyframe_mode_all) since 19.1.0
 
 ~~Return Type: `Bool`~~
 

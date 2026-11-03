@@ -1,5 +1,14 @@
 # ColorGroup
 
+> New in 21.1.2
+
+### GetPhotosInPhotoAlbum(photoAlbum=CurrPhotoAlbum)
+Return Type: `[PhotoAlbumItem]`
+
+Returns a list of [PhotoAlbumItem](./PhotoAlbumItem.md) that are in colorGroup in the given [PhotoAlbum](./PhotoAlbum.md). photoAlbum is the current photo album by default.
+
+------
+
 ### GetName()             
 Return Type: `String`             
 

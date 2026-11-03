@@ -1,5 +1,14 @@
 # Folder
 
+> New in 21.1.2
+
+### GetParentFolder()
+Return Type: `Folder`
+
+Returns the [Folder](./Folder.md) object containing this folder, or None for the root folder.
+
+------
+
 > New in 21.0.2
 
 ### PerformAudioClassification()
@@ -36,6 +45,8 @@ Refer to [Studio and AI Scripting APIs](../settings/StudioAndAIScriptingAPIs.md)
 Return Type: `Bool`
 
 Performs Slate analysis on all MediaPoolItems in the folder using the current settings and specified markerColor. Returns True if required packages are installed and analysis is successful.
+
+Adds a "Detected Slate" duration marker over the frames of each slate found; the text written on the slate is not read.
 
 Refer to [Analyze Slate Settings](../settings/AnalyzeSlateSettings.md) for information on markerColor.
 

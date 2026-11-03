@@ -190,6 +190,6 @@ GetSetting and SetSetting                       --> {}                 # setting
 
 ## Moved methods
 
-- `Timeline.ApplyGradeFromDRX(path, gradeMode, [items])` → moved to [Graph](./api/Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
-- `Timeline.ApplyGradeFromDRX(path, gradeMode, item1, item2, ...)` → moved to [Graph](./api/Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse) since 19.1.0
+- `Timeline.ApplyGradeFromDRX(path, gradeMode, [items])` → moved to [Graph](./api/Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse-keyframemoderesolvekeyframe_mode_all) since 19.1.0
+- `Timeline.ApplyGradeFromDRX(path, gradeMode, item1, item2, ...)` → moved to [Graph](./api/Graph.md#applygradefromdrxpath-grademode-applytoalllayersfalse-keyframemoderesolvekeyframe_mode_all) since 19.1.0
 - `TimelineItem.ApplyArriCdlLut()` → moved to [Graph](./api/Graph.md#applyarricdllut) since 19.1.0

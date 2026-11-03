@@ -1,5 +1,86 @@
 # TimelineItem
 
+> New in 21.1.2
+
+### GetPosition(subframePrecision=False)
+Return Type: `{position}`
+
+Returns the TimelineItem's current absolute position as a dict with the keys "trackType", "trackIndex" and "startFrame". Returns a fractional frame if subframePrecision (Bool) is True.
+
+Refer to [Timeline Item Position](../settings/TimelineItemPosition.md) for the returned keys.
+
+### SetPosition({position}, moveLinkedItems=True, subframePrecision=False)
+Return Type: `Bool`
+
+Updates the TimelineItem's position on the timeline. Keys omitted from position keep their current value.
+
+If moveLinkedItems (Bool) is True, linked items are moved too. If subframePrecision (Bool) is True, fractional startFrame values are allowed for audio clips when the 'Align audio edits to frame boundaries' preference is off. Otherwise, the position is aligned to whole frames.
+
+To move several items together, use [Timeline.MoveItems](./Timeline.md#moveitemstimelineitems-position-movelinkeditemstrue-subframeprecisionfalse).
+
+Refer to [Timeline Item Position](../settings/TimelineItemPosition.md) for the supported keys.
+
+### SetLeftOffset(offset, subframePrecision=False, updateLinkedItems=True)
+Return Type: `Bool`
+
+Sets the clip's left (start) edit point to have the given offset (in frames) available, as returned by [GetLeftOffset](#getleftoffsetsubframe_precision).
+
+If subframePrecision (Bool) is True, fractional offsets are allowed for audio clips when the 'Align audio edits to frame boundaries' preference is off. Otherwise, the offset is aligned to whole frames. If updateLinkedItems (Bool) is True, linked items are also adjusted.
+
+### SetRightOffset(offset, subframePrecision=False, updateLinkedItems=True)
+Return Type: `Bool`
+
+Sets the clip's right (end) edit point to have the given offset (in frames) available, as returned by [GetRightOffset](#getrightoffsetsubframe_precision).
+
+If subframePrecision (Bool) is True, fractional offsets are allowed for audio clips when the 'Align audio edits to frame boundaries' preference is off. Otherwise, the offset is aligned to whole frames. If updateLinkedItems (Bool) is True, linked items are also adjusted.
+
+### AddEffect(category, id)
+Return Type: `Effect`
+
+Applies the effect with the provided category ("fusion", "ofx" or "audio") and id to this timeline item. Returns the applied [Effect](./Effect.md), or None on failure.
+
+Use [Resolve.GetEffectsList](./Resolve.md#geteffectslistmediatype) to list the available effects and their category and id.
+
+### GetEffects(category)
+Return Type: `[Effect]`
+
+Returns the [Effect](./Effect.md) list of the given category ("fusion", "ofx" or "audio") applied to this timeline item.
+
+### DeleteEffects([effects])
+Return Type: `Bool`
+
+Removes the given [Effect](./Effect.md) list from this timeline item.
+
+### CopyAttributes([targetItems], {copyAttributesOptions})
+Return Type: `Bool`
+
+Pastes the selected attributes from this item onto each [TimelineItem](./TimelineItem.md) in targetItems. Equivalent to "Paste Attributes" on the Edit and Cut pages.
+
+Refer to [Copy Attributes Options](../settings/CopyAttributesOptions.md) for information on supported settings.
+
+### RippleDeleteSilence([{removeSilenceOptions}])
+Return Type: `Bool`
+
+Ripple deletes silent portions from this audio TimelineItem, using the given options.
+
+Refer to [Remove Silence Options](../settings/RemoveSilenceOptions.md) for information on supported settings.
+
+### AnalyzeAudioLevels(standard)
+Return Type: `{audioLevelsInfo}`
+
+Analyzes the audio loudness levels of this timeline item. standard (string) is a mode name from [Timeline.GetNormalizeAudioModes()](./Timeline.md#getnormalizeaudiomodes), excluding the peak-only "Sample Peak Program" and "True Peak" modes.
+
+Refer to [Audio Levels Info](../settings/AudioLevelsInfo.md) for the returned keys.
+
+### ExportFrame(frameOffset, [{exportFrameOptions}])
+Return Type: `{exportFrameResult}`
+
+Exports the frame at frameOffset (int, 0-based offset from the item start) as a still image, to a file or as an encoded string, per exportFrameOptions.
+
+Refer to [Export Frame Options](../settings/ExportFrameOptions.md) for information on supported settings and the returned keys.
+
+---
+
 > New in 21.1.0
 
 ### GetType()
@@ -696,6 +777,8 @@ Sets the value of property "propertyKey" to value "propertyValue".Refer to "Look
 Return Type: `Bool`
 
 Performs Smart Reframe. Returns True if successful, False otherwise.
+
+Smart Reframe tracks the subject and repositions it within the item's existing frame. It does not itself crop or rescale, so the frame must already be filled for the reposition to have anything to work with: when reframing to another aspect ratio, set the timeline's resolution and its "timelineInputResMismatchBehavior" setting to "scaleToCrop" first (refer to [Project and Clip Properties](../settings/ProjectAndClipProperties.md)), then call this.
 
 The progress of an active Smart Reframe can be read with [Project.GetSmartReframeStatus](./Project.md#getsmartreframestatus).
 

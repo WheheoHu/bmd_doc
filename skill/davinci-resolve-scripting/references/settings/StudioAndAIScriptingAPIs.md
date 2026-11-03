@@ -12,7 +12,7 @@ The following functions require one or more Extras downloads:
 
 - [`Folder:AnalyzeForIntellisearch`](../api/Folder.md#analyzeforintellisearchidentifyfaces-isbettermode) / [`MediaPoolItem:AnalyzeForIntellisearch`](../api/MediaPoolItem.md#analyzeforintellisearchidentifyfaces-isbettermode) with `isBetterMode=False` requires AI IntelliSearch - Faster.
 - [`Folder:AnalyzeForIntellisearch`](../api/Folder.md#analyzeforintellisearchidentifyfaces-isbettermode) / [`MediaPoolItem:AnalyzeForIntellisearch`](../api/MediaPoolItem.md#analyzeforintellisearchidentifyfaces-isbettermode) with `isBetterMode=True` requires AI IntelliSearch - Better.
-- [`Folder:AnalyzeForSlate`](../api/Folder.md#analyzeforslatemarkercolor) / [`MediaPoolItem:AnalyzeForSlate`](../api/MediaPoolItem.md#analyzeforslatemarkercolor) requires AI Slate ID.
+- [`Folder:AnalyzeForSlate`](../api/Folder.md#analyzeforslatemarkercolor) / [`MediaPoolItem:AnalyzeForSlate`](../api/MediaPoolItem.md#analyzeforslatemarkercolor) requires AI IntelliSearch - Faster (changed in 21.1.2, previously AI Slate ID).
 - [`Folder:TranscribeAudio`](../api/Folder.md#transcribeaudiousespeakerdetectionnone-transcribeasnestedclipfalse) / [`MediaPoolItem:TranscribeAudio`](../api/MediaPoolItem.md#transcribeaudiousespeakerdetectionnone-transcribeasnestedclipfalse) — transcription workflows with extended language models. Languages from built in models will be used as a fallback if unavailable.
 - [`Project:GenerateSpeech`](../api/Project.md#generatespeechspeechgenerationsettings-timecode) requires AI Speech Generator.
 

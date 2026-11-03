@@ -1,6 +1,49 @@
 ---
 displayed_sidebar: apiSidebar
 ---
+> New in 21.1.2
+
+### GetPhotoAlbumCount()
+Return Type: `int`
+
+Returns the number of photo albums in the project.
+
+### GetPhotoAlbumByIndex(idx)
+Return Type: `PhotoAlbum`
+
+Returns the [PhotoAlbum](./PhotoAlbum.md) at the given index, 1 < = idx < = [GetPhotoAlbumCount()](#getphotoalbumcount). Returns None if there is no photo album at that index.
+
+### GetCurrentPhotoAlbum()
+Return Type: `PhotoAlbum`
+
+Returns the currently loaded [PhotoAlbum](./PhotoAlbum.md), or None if there is none.
+
+### SetCurrentPhotoAlbum(photoAlbum)
+Return Type: `Bool`
+
+Sets given [PhotoAlbum](./PhotoAlbum.md) as current photo album for the project. Returns True if successful.
+
+### GetPhotoQuickExportRenderPresets()
+Return Type: `[preset_name...]`
+
+Returns a list of Quick Export render presets for photo albums, by name.
+
+### SetPhotoRenderSettings(\{settings\})
+Return Type: `Bool`
+
+Sets given settings for rendering the current photo album on the Deliver page. Settings not given keep their current value.
+
+Refer to [Photo Render Settings](../resolve_settings/PhotoRenderSettings.md) for information on supported settings.
+
+### RenderPhotosWithQuickExport(quickExportPresetName, \{presetInfo\})
+Return Type: `{status info}`
+
+Renders the current photo album with the Quick Export preset quickExportPresetName (string), one of [GetPhotoQuickExportRenderPresets](#getphotoquickexportrenderpresets).
+
+Refer to [Photo Render Settings](../resolve_settings/PhotoRenderSettings.md#quick-export-settings) for information on the supported presetInfo keys, and to [Job Status](../resolve_settings/JobStatus.md#quick-export-render-status) for the returned keys.
+
+---
+
 > New in 21.1.1
 
 ### GetRenderWithQuickExportStatus()
@@ -139,6 +182,8 @@ Refer to [Studio and AI Scripting APIs](../resolve_settings/StudioAndAIScripting
 Return Type: `MediaPoolItem`
 
 Generates an audio [MediaPoolItem](./MediaPoolItem.md) based on the given speechGenerationSettings and adds it to the timeline at the stated timecode if "AddToTimeline" is True. Returns the newly generated [MediaPoolItem](./MediaPoolItem.md).
+
+The optional timecode (string) sets where the audio lands, and is only used when "AddToTimeline" is set. The speech is generated into the current project and timeline as of the call, not into the project this was called on. Without the AI Speech Generator Extra installed, the call fails and returns None instead of a [MediaPoolItem](./MediaPoolItem.md).
 
 Refer to [Speech Generation Settings](../resolve_settings/SpeechGenerationSettings.md) for information on supported settings.
 

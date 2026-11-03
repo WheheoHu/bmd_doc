@@ -367,7 +367,9 @@ When setting a parameter, please check the return value to ensure the success of
 
 ### Transcription and media locations
 
-`transcriptionLanguage`: string (language code, example: "en")
+`transcriptionLanguage`: string (language code, example: "en". Must be a language of the model selected by `transcriptionExtendedLanguageSupport`)
+
+`transcriptionExtendedLanguageSupport`: string ("0" or "1". New in 21.1.2. Changing it resets `transcriptionLanguage` to "auto", as in the UI. Setting "1" fails if the extended language models are not installed)
 
 `speakerDetection`: string ("0" or "1")
 
