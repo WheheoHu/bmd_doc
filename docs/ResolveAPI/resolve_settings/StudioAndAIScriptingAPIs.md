@@ -20,3 +20,5 @@ The following functions require one or more Extras downloads:
 - [`Project:GenerateSpeech`](../resolve_api/Project.md#generatespeechspeechgenerationsettings-timecode) requires AI Speech Generator.
 
 For a successful API call, the required package will need to be installed before script invocation. Go to the DaVinci Resolve Studio application menu, open the Extras Download Manager and install the required package.
+
+The Extras Download Manager can also be driven via script using [`Resolve:GetExtrasPackages`](../resolve_api/Resolve.md#getextraspackages), [`Resolve:InstallExtrasPackage`](../resolve_api/Resolve.md#installextraspackagename) and [`Resolve:UninstallExtrasPackage`](../resolve_api/Resolve.md#uninstallextraspackagename).

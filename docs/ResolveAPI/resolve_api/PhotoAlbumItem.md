@@ -1,6 +1,35 @@
 ---
 displayed_sidebar: apiSidebar
 ---
+> New in 21.2
+
+### ApplyAutoColor()
+Return Type: `Bool`
+
+Analyses the photo and applies the automatic balance and grade. Replaces the grade of a previous call and clears the legacy auto color values.
+
+### SetAutoColorEnabled(enabled)
+Return Type: `Bool`
+
+Enables or disables the grade a previous `ApplyAutoColor()` applied.
+
+### GetAutoColorEnabled()
+Return Type: `Bool`
+
+Returns whether auto color is applied and enabled on this photo. Returns None if the photo has no auto color applied.
+
+### ClearAutoColor()
+Return Type: `Bool`
+
+Discards the auto-color grade applied by a previous `ApplyAutoColor()` call.
+
+### GetCDL(nodeIndex)
+Return Type: `{CDL}`
+
+Returns the ASC CDL equivalent of the primaries of the node at nodeIndex (1-based) as a dict with keys "NodeIndex", "Slope", "Offset", "Power" and "Saturation".
+
+------
+
 > New in 21.1.2
 
 ### GetName()

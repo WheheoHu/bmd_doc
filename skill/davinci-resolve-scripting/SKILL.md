@@ -6,8 +6,8 @@ description: Use when writing, editing, or debugging DaVinci Resolve scripting A
 # DaVinci Resolve Scripting API
 
 Accurate reference for the DaVinci Resolve scripting API, generated from the versioned
-docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.1.2** (docs last
-updated 22 Oct 2026). Use these files instead of guessing method names — the Resolve
+docs at https://wheheohu.github.io/bmd_doc/. Covers Resolve **21.2** (docs last
+updated 4 Nov 2026). Use these files instead of guessing method names — the Resolve
 API is easy to hallucinate.
 
 ## Getting started
@@ -71,6 +71,7 @@ headless mode, and the object hierarchy, read:
 - [Encrypt DCTL Options](references/settings/EncryptDCTLOptions.md)
 - [Export Frame Options](references/settings/ExportFrameOptions.md)
 - [Export LUT](references/settings/ExportLUT.md)
+- [Export Thumbnails Options](references/settings/ExportThumbnailsOptions.md)
 - [Fade Info](references/settings/FadeInfo.md)
 - [Job Status](references/settings/JobStatus.md)
 - [Keyframe Mode Information](references/settings/KeyframeModeInformation.md)

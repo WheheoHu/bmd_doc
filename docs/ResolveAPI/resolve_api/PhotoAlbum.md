@@ -1,6 +1,17 @@
 ---
 displayed_sidebar: apiSidebar
 ---
+> New in 21.2
+
+### ExportThumbnails(photoIndices, [\{exportThumbnailsOptions\}])
+Return Type: `{exportThumbnailsResult}`
+
+Renders the photos at the given 1-based album positions into a single grid image, one cell per photo. `1 <= photoIndex <= GetPhotoList()` size.
+
+Refer to [Export Thumbnails Options](../resolve_settings/ExportThumbnailsOptions.md) for supported settings and returned keys.
+
+------
+
 > New in 21.1.2
 
 ### GetName()

@@ -1,5 +1,16 @@
 # MediaPoolItem
 
+> New in 21.2
+
+### ExportThumbnails(frames, [{exportThumbnailsOptions}])
+Return Type: `{exportThumbnailsResult}`
+
+Renders the given frames (0-based offsets from the item start) into a single grid image, filled in the order given. Each element of frames may be an integer offset or a `{frameOffset, label}` dict.
+
+Refer to [Export Thumbnails Options](../settings/ExportThumbnailsOptions.md) for supported settings and returned keys.
+
+------
+
 > New in 21.1.2
 
 ### SetTranscription({transcription})

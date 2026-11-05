@@ -1,6 +1,31 @@
 ---
 displayed_sidebar: apiSidebar
 ---
+> New in 21.2
+
+### GetExtrasPackages()
+Return Type: `[{extrasPackageInfo}...]`
+
+Returns the list of Extras Download Manager packages available for this system as a list of dicts. Each entry has the keys `name`, `description`, `status` ("installed", "downloading", "installing" or "notInstalled"), `progress` (0.0–1.0), `downloadSize` and `installedSize` (both in bytes).
+
+Use the `name` value to install or uninstall a package. Refer to [Studio and AI Scripting APIs](../resolve_settings/StudioAndAIScriptingAPIs.md) for prerequisites.
+
+### InstallExtrasPackage(name)
+Return Type: `Bool`
+
+Queues the download and installation of the Extras package identified by name (string), as given by the `name` key of a `GetExtrasPackages()` entry. Poll `GetExtrasPackages()` to track status and progress.
+
+Refer to [Studio and AI Scripting APIs](../resolve_settings/StudioAndAIScriptingAPIs.md) for prerequisites.
+
+### UninstallExtrasPackage(name)
+Return Type: `Bool`
+
+Queues removal of the Extras package identified by name (string), as given by the `name` key of a `GetExtrasPackages()` entry. Also cancels an ongoing download for that package.
+
+Refer to [Studio and AI Scripting APIs](../resolve_settings/StudioAndAIScriptingAPIs.md) for prerequisites.
+
+------
+
 > New in 21.1.2
 
 ### GetEffectsList(mediaType)

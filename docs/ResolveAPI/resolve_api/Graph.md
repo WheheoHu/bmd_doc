@@ -2,6 +2,15 @@
 displayed_sidebar: apiSidebar
 ---
 
+> New in 21.2
+
+### GetNodeEnabled(nodeIndex)
+Return Type: `Bool`
+
+Returns whether the node at nodeIndex is enabled. 1 \<= nodeIndex \<= [GetNumNodes()](#getnumnodes).
+
+------
+
 > New in 21.1.2
 
 ### SetNodeLabel(nodeIndex, label)

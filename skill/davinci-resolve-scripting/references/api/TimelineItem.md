@@ -1,5 +1,41 @@
 # TimelineItem
 
+> New in 21.2
+
+### ExportThumbnails(frames, [{exportThumbnailsOptions}])
+Return Type: `{exportThumbnailsResult}`
+
+Renders the given frames (0-based offsets from the item start) into a single grid image, filled in the order given. Each element of frames may be an integer offset or a `{frameOffset, label}` dict.
+
+Refer to [Export Thumbnails Options](../settings/ExportThumbnailsOptions.md) for supported settings and returned keys.
+
+### ApplyAutoColor()
+Return Type: `Bool`
+
+Analyses the clip and applies the automatic balance and grade to the frame the playhead is on, or from the first frame of the clip when it is not the current one. Replaces the grade of a previous call and clears the legacy auto color values.
+
+### SetAutoColorEnabled(enabled)
+Return Type: `Bool`
+
+Enables or disables the grade a previous `ApplyAutoColor()` applied.
+
+### GetAutoColorEnabled()
+Return Type: `Bool`
+
+Returns whether auto color is applied and enabled on this clip. Returns None if the clip has no auto color applied.
+
+### ClearAutoColor()
+Return Type: `Bool`
+
+Discards the auto-color grade applied by a previous `ApplyAutoColor()` call.
+
+### GetCDL(nodeIndex)
+Return Type: `{CDL}`
+
+Returns the ASC CDL equivalent of the primaries of the node at nodeIndex (1-based) as a dict with keys "NodeIndex", "Slope", "Offset", "Power" and "Saturation".
+
+------
+
 > New in 21.1.2
 
 ### GetPosition(subframePrecision=False)

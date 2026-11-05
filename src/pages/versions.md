@@ -5,6 +5,49 @@ title: Version Update Info
 For more information on the latest version of the Update, see the [release notes in bmd webside](https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion).
 
 
+# Resolve 21.2 update
+
+## Resolve
+
+### New
+
+- GetExtrasPackages()
+- InstallExtrasPackage(name)
+- UninstallExtrasPackage(name)
+
+## Graph
+
+### New
+
+- GetNodeEnabled(nodeIndex)
+
+## MediaPoolItem / Timeline / TimelineItem
+
+### New
+
+- ExportThumbnails(frames, [\{exportThumbnailsOptions\}])
+
+## PhotoAlbum
+
+### New
+
+- ExportThumbnails(photoIndices, [\{exportThumbnailsOptions\}])
+
+## TimelineItem / PhotoAlbumItem
+
+### New
+
+- ApplyAutoColor()
+- SetAutoColorEnabled(enabled)
+- GetAutoColorEnabled()
+- ClearAutoColor()
+- GetCDL(nodeIndex)
+
+### Changes
+
+- ExportFrame / ExportFrameOptions: new `quality`, `roiX`, `roiY`, `roiWidth`, `roiHeight` keys; `ExportFrameResult` now returns `width` and `height`
+
+
 # Resolve 21.1.2 update
 
 ## Resolve
